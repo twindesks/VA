@@ -30,6 +30,9 @@
     </script>
     <style>
         /* Base styles */
+        html {
+            scroll-behavior: smooth; /* Enables smooth scrolling for anchor links */
+        }
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f7f9fb; /* Very light subtle background */
@@ -111,12 +114,21 @@
 
 <body>
 
-    <header class="bg-white sticky top-0 z-40 shadow-md">
+    <header class="bg-white sticky top-0 z-50 shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             
-            <a href="/" title="TwinDesk Homepage" class="flex items-center">
-                <img src="https://live.staticflickr.com/65535/54901201395_a052e1f973_b.jpg" alt="TwinDesk Logo" class="h-24 w-36"/>
+            <a href="#" title="TwinDesk Homepage" class="flex items-center">
+                <img src="https://live.staticflickr.com/65535/54901201395_a052e1f973_b.jpg" alt="TwinDesk Logo" class="h-20 w-auto md:h-24"/>
             </a>
+
+            <nav class="hidden md:flex space-x-8">
+                <a href="#roles" class="text-gray-600 hover:text-td-primary font-medium transition duration-300">Roles</a>
+                <a href="#process" class="text-gray-600 hover:text-td-primary font-medium transition duration-300">Process</a>
+                <a href="#pricing" class="text-gray-600 hover:text-td-primary font-medium transition duration-300">Pricing</a>
+                <a href="#team" class="text-gray-600 hover:text-td-primary font-medium transition duration-300">Team</a>
+                <a href="#faq" class="text-gray-600 hover:text-td-primary font-medium transition duration-300">FAQ</a>
+            </nav>
+
             <a href="https://calendly.com/info-twindesk/30min?month=2025-11" class="bg-td-primary text-white px-4 py-2 rounded-lg font-medium hover:bg-td-secondary transition duration-300 shadow-md" target="_blank">
                 Schedule Call
             </a>
@@ -125,9 +137,9 @@
 
     <main>
         
-        <a href="https://wa.me/639054401660" target="_blank" title="Chat on WhatsApp" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white px-5 py-3 rounded-full shadow-2xl hover:scale-105 transition duration-300 flex items-center gap-2 border-2 border-white font-bold group animate-bounce hover:animate-none">
-            <i data-lucide="message-circle" class="w-6 h-6 fill-current"></i>
-            <span>Let's Chat</span>
+        <a href="https://wa.me/639054401660" target="_blank" class="fixed bottom-8 right-8 z-[100] bg-[#25D366] text-white px-6 py-3 rounded-full shadow-2xl hover:scale-105 transition-transform duration-300 flex items-center gap-3 border-2 border-white group animate-bounce hover:animate-none">
+            <i data-lucide="message-circle" class="w-6 h-6 fill-white text-[#25D366]"></i> 
+            <span class="font-bold text-lg tracking-wide">Let's Chat</span>
         </a>
 
         <section class="bg-td-secondary/10 pt-16 pb-24 border-b-4 border-td-primary">
@@ -234,7 +246,7 @@
             </div>
         </section>
 
-        <section class="py-20 bg-gray-50">
+        <section id="roles" class="py-20 bg-gray-50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-4">
                     Specialized Roles We Can Source
@@ -277,7 +289,7 @@
             </div>
         </section>
 
-        <section class="py-20 bg-td-secondary/20">
+        <section id="process" class="py-20 bg-td-secondary/20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl font-extrabold text-gray-900 mb-4">VA Matching Process</h2>
@@ -705,7 +717,7 @@
             </div>
         </section>
         
-        <section class="py-20 bg-gray-50 border-t border-gray-200">
+        <section id="faq" class="py-20 bg-gray-50 border-t border-gray-200">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-4">Frequently Asked Questions</h2>
                 <p class="text-xl text-center text-gray-500 mb-12">
@@ -880,9 +892,24 @@
     </main>
 
     
-    <footer class="bg-gray-800 text-white py-6">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
-            &copy; 2024 TwinDesk. All rights reserved. | Elite Virtual Assistants.
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            
+            <div class="mb-4 md:mb-0">
+                 <img src="https://live.staticflickr.com/65535/54901201395_a052e1f973_b.jpg" alt="TwinDesk Logo" class="h-12 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition duration-300"/>
+            </div>
+
+            <nav class="flex flex-wrap justify-center gap-6 mb-4 md:mb-0">
+                <a href="#roles" class="text-gray-400 hover:text-white transition duration-300">Roles</a>
+                <a href="#process" class="text-gray-400 hover:text-white transition duration-300">Process</a>
+                <a href="#pricing" class="text-gray-400 hover:text-white transition duration-300">Pricing</a>
+                <a href="#team" class="text-gray-400 hover:text-white transition duration-300">Team</a>
+                <a href="#faq" class="text-gray-400 hover:text-white transition duration-300">FAQ</a>
+            </nav>
+
+            <div class="text-gray-400 text-sm">
+                &copy; 2024 TwinDesk. All rights reserved.
+            </div>
         </div>
     </footer>
 
