@@ -6,109 +6,31 @@
     <title>TwinDesk | Elite Virtual Assistants. Zero Hiring Risk. Guaranteed.</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <script>
-        // Custom Tailwind Configuration to use Brand Colors and Inter font
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'td-primary': '#3f9dd1',       // Azure
-                        'td-secondary': '#66aedd',     // Lighter Azure
-                        'td-pink': '#f27ea9',          // Pastel Pink
-                        'td-orange': '#faaf20',        // Orange
-                        'td-light-orange': '#ffdf99',  // Pastel Orange
+                        'td-primary': '#3f9dd1', 'td-secondary': '#66aedd', 'td-pink': '#f27ea9', 'td-orange': '#faaf20', 'td-light-orange': '#ffdf99',
                     },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
                 },
             },
         }
     </script>
     <style>
-        /* Base styles */
-        html {
-            scroll-behavior: smooth; /* Enables smooth scrolling for anchor links */
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f7f9fb; /* Very light subtle background */
-        }
-        
-        /* Custom CSS for the 3D Flipping Card */
-        .flip-card {
-            perspective: 1000px;
-            /* Height and width will be set via Tailwind classes on the element */
-        }
-
-        .flip-card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            transition: transform 0.8s;
-            transform-style: preserve-3d;
-        }
-
-        .flip-card:hover .flip-card-inner {
-            transform: rotateY(180deg);
-        }
-
-        .flip-card-front, .flip-card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            -webkit-backface-visibility: hidden; /* Safari */
-            backface-visibility: hidden;
-            border-radius: 1rem; /* Rounded-2xl */
-            padding: 1rem; 
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .flip-card-front {
-            background-color: #ffffff;
-            border: 1px solid #e5e7eb;
-        }
-
-        .flip-card-back {
-            /* Background color is now set via inline Tailwind classes per person */
-            color: white;
-            transform: rotateY(180deg);
-        }
-
-        /* Custom style for Accordion toggle icon */
-        .accordion-icon {
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .accordion[aria-expanded="true"] .accordion-icon {
-            transform: rotate(90deg);
-        }
-
-        /* Styling for the circular profile image */
-        .profile-img-container {
-            position: relative;
-            padding-top: 100%; /* Creates a square container */
-            width: 100%;
-        }
-        .profile-img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
-            border: 5px solid white; /* Adds contrast to the circular image */
-        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background-color: #f7f9fb; }
+        .flip-card { perspective: 1000px; }
+        .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.8s; transform-style: preserve-3d; }
+        .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+        .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: 1rem; padding: 1rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .flip-card-front { background-color: #ffffff; border: 1px solid #e5e7eb; }
+        .flip-card-back { color: white; transform: rotateY(180deg); }
+        .accordion-icon { transition: transform 0.3s ease-in-out; }
+        .accordion[aria-expanded="true"] .accordion-icon { transform: rotate(90deg); }
     </style>
 </head>
 
@@ -116,28 +38,22 @@
 
     <header class="bg-white sticky top-0 z-50 shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            
-            <a href="#home" title="TwinDesk Homepage" class="flex items-center">
+            <a href="index.html" title="TwinDesk Homepage" class="flex items-center">
                 <img src="https://live.staticflickr.com/65535/54901201395_a052e1f973_b.jpg" alt="TwinDesk Logo" class="h-20 w-auto md:h-24"/>
             </a>
-
             <nav class="hidden md:flex space-x-6 lg:space-x-8">
-                <a href="#home" class="text-gray-600 hover:text-td-primary font-medium transition duration-300">Home</a>
+                <a href="index.html" class="text-td-primary font-bold transition duration-300">Home</a>
                 <a href="our-virtual-assistants.html" class="text-gray-600 hover:text-td-primary font-medium transition duration-300">Our Virtual Assistants</a>
-                <a href="#process" class="text-gray-600 hover:text-td-primary font-medium transition duration-300">VA Matching Process</a>
+                <a href="va-matching-process.html" class="text-gray-600 hover:text-td-primary font-medium transition duration-300">VA Matching Process</a>
                 <a href="#pricing" class="text-gray-600 hover:text-td-primary font-medium transition duration-300">Pricing</a>
                 <a href="#team" class="text-gray-600 hover:text-td-primary font-medium transition duration-300">Team</a>
                 <a href="#faq" class="text-gray-600 hover:text-td-primary font-medium transition duration-300">FAQ</a>
             </nav>
-
-            <a href="https://calendly.com/info-twindesk/30min?month=2025-11" class="bg-td-primary text-white px-4 py-2 rounded-lg font-medium hover:bg-td-secondary transition duration-300 shadow-md" target="_blank">
-                Schedule Call
-            </a>
+            <a href="https://calendly.com/info-twindesk/30min?month=2025-11" class="bg-td-primary text-white px-4 py-2 rounded-lg font-medium hover:bg-td-secondary transition duration-300 shadow-md" target="_blank">Schedule Call</a>
         </div>
     </header>
 
     <main>
-        
         <a href="https://wa.me/639054401660" target="_blank" class="fixed bottom-8 right-8 z-[100] bg-[#25D366] text-white px-6 py-3 rounded-full shadow-2xl hover:scale-105 transition-transform duration-300 flex items-center gap-3 border-2 border-white group animate-bounce hover:animate-none">
             <i data-lucide="message-circle" class="w-6 h-6 fill-white text-[#25D366]"></i> 
             <span class="font-bold text-lg tracking-wide">Let's Chat</span>
@@ -145,54 +61,22 @@
 
         <section id="home" class="bg-td-secondary/10 pt-16 pb-24 border-b-4 border-td-primary">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                
-                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-4">
-                    Reliable Virtual Assistants. <span class="text-td-primary">Zero Hiring Risk.</span> Guaranteed.
-                </h1>
-                <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-                    We match you with friendly, skilled VAs for <strong>Executive, Admin, and Customer Service</strong> roles. No complicated hiring—just the support you need to grow.
-                </p>
-                <div class="mt-10">
-                    
-                    <a href="https://calendly.com/info-twindesk/30min" target="_blank" class="inline-block bg-td-orange text-white text-lg font-semibold px-8 py-3 rounded-xl shadow-lg hover:bg-td-pink transition duration-300 transform hover:scale-105">
-                        Discover Your Perfect Match
-                    </a>
-                </div>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-4">Reliable Virtual Assistants. <span class="text-td-primary">Zero Hiring Risk.</span> Guaranteed.</h1>
+                <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">We match you with friendly, skilled VAs for <strong>Executive, Admin, and Customer Service</strong> roles.</p>
+                <div class="mt-10"><a href="https://calendly.com/info-twindesk/30min" target="_blank" class="inline-block bg-td-orange text-white text-lg font-semibold px-8 py-3 rounded-xl shadow-lg hover:bg-td-pink transition duration-300 transform hover:scale-105">Discover Your Perfect Match</a></div>
             </div>
         </section>
 
         <section class="py-16 bg-white border-b border-gray-100">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
-                    <div class="flex justify-center lg:justify-end">
-                        <img src="https://live.staticflickr.com/65535/54904115926_b1d3984ed9.jpg" alt="Virtual Assistant Working" class="w-full max-w-md rounded-2xl shadow-xl border-4 border-td-secondary/20">
-                    </div>
-
+                    <div class="flex justify-center lg:justify-end"><img src="https://live.staticflickr.com/65535/54904115926_b1d3984ed9.jpg" alt="Virtual Assistant" class="w-full max-w-md rounded-2xl shadow-xl border-4 border-td-secondary/20"></div>
                     <div>
                         <h2 class="text-3xl font-extrabold text-gray-900 mb-6">Did you know?</h2>
-                        <p class="text-xl text-gray-700 mb-8 leading-relaxed">
-                            For just <span class="text-td-primary font-bold">$9,600 a year</span>, you can hire skilled, full-time remote staff we offer:
-                        </p>
-
+                        <p class="text-xl text-gray-700 mb-8 leading-relaxed">For just <span class="text-td-primary font-bold">$9,600 a year</span>, you can hire skilled, full-time remote staff.</p>
                         <ul class="space-y-5">
-                            <li class="flex items-start">
-                                <div class="bg-td-orange/10 p-1 rounded-full mr-3 mt-1">
-                                    <i data-lucide="check" class="w-5 h-5 text-td-orange"></i>
-                                </div>
-                                <span class="text-gray-700 text-lg">Save up to <strong>70%</strong> compared to hiring in the US.</span>
-                            </li>
-                            <li class="flex items-start">
-                                <div class="bg-td-orange/10 p-1 rounded-full mr-3 mt-1">
-                                    <i data-lucide="check" class="w-5 h-5 text-td-orange"></i>
-                                </div>
-                                <span class="text-gray-700 text-lg">Great experience in sales, support, finance, and other key jobs.</span>
-                            </li>
-                            <li class="flex items-start">
-                                <div class="bg-td-orange/10 p-1 rounded-full mr-3 mt-1">
-                                    <i data-lucide="check" class="w-5 h-5 text-td-orange"></i>
-                                </div>
-                                <span class="text-gray-700 text-lg">A strong fit with Western work habits, making it easy to work together.</span>
-                            </li>
+                            <li class="flex items-start"><div class="bg-td-orange/10 p-1 rounded-full mr-3 mt-1"><i data-lucide="check" class="w-5 h-5 text-td-orange"></i></div><span class="text-gray-700 text-lg">Save up to <strong>70%</strong> compared to hiring in the US.</span></li>
+                            <li class="flex items-start"><div class="bg-td-orange/10 p-1 rounded-full mr-3 mt-1"><i data-lucide="check" class="w-5 h-5 text-td-orange"></i></div><span class="text-gray-700 text-lg">Great experience in sales, support, and admin.</span></li>
                         </ul>
                     </div>
                 </div>
@@ -202,204 +86,12 @@
         <section class="py-16 bg-td-primary/5 border-b border-gray-100">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
-                    
                     <div class="order-2 lg:order-1">
-                        <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">
-                            That's where we come in.
-                        </h2>
-                        <p class="text-xl text-td-primary font-semibold mb-8">
-                            Let us find your next favorite employee.
-                        </p>
-
-                        <div class="space-y-6">
-                            <div class="flex items-center">
-                                <div class="bg-white p-3 rounded-xl shadow-sm border border-gray-100 mr-4">
-                                    <i data-lucide="calendar-check" class="w-6 h-6 text-td-pink"></i>
-                                </div>
-                                <span class="text-gray-700 text-lg font-medium">Hassle-free remote hiring.</span>
-                            </div>
-                            <div class="flex items-center">
-                                <div class="bg-white p-3 rounded-xl shadow-sm border border-gray-100 mr-4">
-                                    <i data-lucide="wallet" class="w-6 h-6 text-td-orange"></i>
-                                </div>
-                                <span class="text-gray-700 text-lg font-medium">No hidden costs.</span>
-                            </div>
-                            <div class="flex items-center">
-                                <div class="bg-white p-3 rounded-xl shadow-sm border border-gray-100 mr-4">
-                                    <i data-lucide="award" class="w-6 h-6 text-td-secondary"></i>
-                                </div>
-                                <span class="text-gray-700 text-lg font-medium">Top remote talent, guaranteed.</span>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-10">
-                             <a href="https://calendly.com/info-twindesk/30min" target="_blank" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-xl text-white bg-td-primary hover:bg-td-secondary md:py-4 md:text-lg shadow-lg transition duration-300">
-                                 Schedule a Call
-                             </a>
-                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">That's where we come in.</h2>
+                        <p class="text-xl text-td-primary font-semibold mb-8">Let us find your next favorite employee.</p>
+                        <div class="mt-10"><a href="https://calendly.com/info-twindesk/30min" target="_blank" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-xl text-white bg-td-primary hover:bg-td-secondary md:py-4 md:text-lg shadow-lg transition duration-300">Schedule a Call</a></div>
                     </div>
-
-                    <div class="flex justify-center lg:justify-start order-1 lg:order-2">
-                        <img src="https://live.staticflickr.com/65535/54904422015_18ec91827f.jpg" alt="TwinDesk Team Member" class="w-full max-w-sm rounded-2xl shadow-2xl border-4 border-white rotate-2 hover:rotate-0 transition duration-500">
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section id="roles" class="py-20 bg-gray-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-4">
-                    Specialized Roles We Can Source
-                </h2>
-                <p class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-                    Just provide the title and job description to our team.
-                </p>
-                
-                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6">
-                    
-                    <div class="flex flex-col items-center text-center p-4 bg-white rounded-xl shadow-md border-b-4 border-td-secondary hover:border-td-pink transition duration-300">
-                        <i data-lucide="briefcase" class="w-8 h-8 text-td-primary mb-2"></i>
-                        <p class="text-sm font-medium text-gray-700">EXECUTIVE VIRTUAL ASSISTANT</p>
-                    </div>
-                     <div class="flex flex-col items-center text-center p-4 bg-white rounded-xl shadow-md border-b-4 border-td-secondary hover:border-td-pink transition duration-300">
-                        <i data-lucide="monitor" class="w-8 h-8 text-td-primary mb-2"></i>
-                        <p class="text-sm font-medium text-gray-700">ADMINISTRATIVE ASSISTANT</p>
-                    </div>
-                    <div class="flex flex-col items-center text-center p-4 bg-white rounded-xl shadow-md border-b-4 border-td-secondary hover:border-td-pink transition duration-300">
-                        <i data-lucide="message-square-text" class="w-8 h-8 text-td-primary mb-2"></i>
-                        <p class="text-sm font-medium text-gray-700">CUSTOMER SERVICE VIRTUAL ASSISTANT</p>
-                    </div>
-                    <div class="flex flex-col items-center text-center p-4 bg-white rounded-xl shadow-md border-b-4 border-td-secondary hover:border-td-pink transition duration-300">
-                        <i data-lucide="megaphone" class="w-8 h-8 text-td-primary mb-2"></i>
-                        <p class="text-sm font-medium text-gray-700">SOCIAL MEDIA MANAGEMENT</p>
-                    </div>
-                    <div class="flex flex-col items-center text-center p-4 bg-white rounded-xl shadow-md border-b-4 border-td-secondary hover:border-td-pink transition duration-300">
-                        <i data-lucide="store" class="w-8 h-8 text-td-primary mb-2"></i>
-                        <p class="text-sm font-medium text-gray-700">E-COMMERCE VIRTUAL ASSISTANT</p>
-                    </div>
-                    <div class="flex flex-col items-center text-center p-4 bg-white rounded-xl shadow-md border-b-4 border-td-secondary hover:border-td-pink transition duration-300">
-                        <i data-lucide="palette" class="w-8 h-8 text-td-primary mb-2"></i>
-                        <p class="text-sm font-medium text-gray-700">GRAPHIC DESIGNER</p>
-                    </div>
-                    <div class="flex flex-col items-center text-center p-4 bg-white rounded-xl shadow-md border-b-4 border-td-secondary hover:border-td-pink transition duration-300">
-                        <i data-lucide="video" class="w-8 h-8 text-td-primary mb-2"></i>
-                        <p class="text-sm font-medium text-gray-700">VIDEO EDITOR</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="process" class="py-20 bg-td-secondary/20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-extrabold text-gray-900 mb-4">VA Matching Process</h2>
-                    <p class="text-xl text-gray-600">How we find and select the perfect VA for your specific needs</p>
-                </div>
-                
-                <div class="grid lg:grid-cols-2 gap-12 items-start">
-                    
-                    <div class="bg-white p-8 rounded-xl shadow-xl border-l-8 border-td-primary h-full">
-                        <h3 class="text-2xl font-bold text-td-primary mb-2">Our Matching Process</h3>
-                        <p class="text-gray-500 text-sm mb-8">Our advanced expertise will find your ideal virtual assistant.</p>
-                        
-                        <div class="space-y-6">
-                            <div class="flex items-start">
-                                <div class="bg-td-primary/10 p-2 rounded-lg mr-4">
-                                    <i data-lucide="file-search" class="w-6 h-6 text-td-primary"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-gray-900">Analysis</h4>
-                                    <p class="text-gray-600 text-sm">We analyze your requirements and preferences to understand exactly what you need.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <div class="bg-td-primary/10 p-2 rounded-lg mr-4">
-                                    <i data-lucide="users" class="w-6 h-6 text-td-primary"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-gray-900">Talent Pool Search</h4>
-                                    <p class="text-gray-600 text-sm">We search our pre-vetted pool of 1,000+ VAs to find the best potential candidates.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <div class="bg-td-primary/10 p-2 rounded-lg mr-4">
-                                    <i data-lucide="briefcase" class="w-6 h-6 text-td-primary"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-gray-900">Work Style Match</h4>
-                                    <p class="text-gray-600 text-sm">We match specific skills and work styles to your needs ensuring a smooth cultural fit.</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start">
-                                <div class="bg-td-primary/10 p-2 rounded-lg mr-4">
-                                    <i data-lucide="badge-check" class="w-6 h-6 text-td-primary"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-gray-900">Final Selection</h4>
-                                    <p class="text-gray-600 text-sm">Our team reviews and selects your perfect match, ready for your approval.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-white p-8 rounded-xl shadow-xl border-l-8 border-td-orange h-full">
-                        <h3 class="text-2xl font-bold text-td-orange mb-2">Vetting Process</h3>
-                        <p class="text-gray-500 text-sm mb-8">Only the top 3% of applicants make it through our comprehensive screening process.</p>
-
-                        <div class="space-y-6">
-                            
-                            <div class="flex items-start">
-                                <div class="bg-td-orange/10 p-2 rounded-lg mr-4">
-                                    <i data-lucide="video" class="w-6 h-6 text-td-orange"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-gray-900">Initial Interview & Video Intro</h4>
-                                    <p class="text-gray-600 text-sm">We assess personality and communication style early on.</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start">
-                                <div class="bg-td-orange/10 p-2 rounded-lg mr-4">
-                                    <i data-lucide="languages" class="w-6 h-6 text-td-orange"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-gray-900">Advanced English Assessment</h4>
-                                    <p class="text-gray-600 text-sm">Ensuring near-native communication capabilities.</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start">
-                                <div class="bg-td-orange/10 p-2 rounded-lg mr-4">
-                                    <i data-lucide="user-check" class="w-6 h-6 text-td-orange"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-gray-900">Final Interview</h4>
-                                    <p class="text-gray-600 text-sm">A deep dive into specific skills and experience.</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start">
-                                <div class="bg-td-orange/10 p-2 rounded-lg mr-4">
-                                    <i data-lucide="shield-check" class="w-6 h-6 text-td-orange"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-gray-900">Background & Reference Check</h4>
-                                    <p class="text-gray-600 text-sm">Verifying work history for your peace of mind.</p>
-                                </div>
-                            </div>
-
-                        </div>
-                        
-                        <div class="mt-8 p-4 bg-td-orange/10 rounded-lg text-center">
-                            <p class="text-td-orange font-bold text-sm uppercase tracking-wide">Zero Hiring Risk</p>
-                            <p class="text-gray-600 text-xs mt-1">We do the hard work so you don't have to.</p>
-                        </div>
-                    </div>
-
+                    <div class="flex justify-center lg:justify-start order-1 lg:order-2"><img src="https://live.staticflickr.com/65535/54904422015_18ec91827f.jpg" alt="TwinDesk Team" class="w-full max-w-sm rounded-2xl shadow-2xl border-4 border-white rotate-2 hover:rotate-0 transition duration-500"></div>
                 </div>
             </div>
         </section>
@@ -407,189 +99,37 @@
         <section id="pricing" class="py-20 bg-td-light-orange/30">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-4">Transparent Pricing Models</h2>
-                <p class="text-xl text-center text-gray-500 mb-16 max-w-3xl mx-auto">
-                    Choose the partnership model that fits your business needs. 
-                </p>
-
                 <div class="mb-16">
-                    <div class="flex items-center justify-center space-x-4 mb-8">
-                        <div class="h-px bg-gray-300 w-20"></div>
-                        <h3 class="text-2xl font-bold text-td-pink uppercase tracking-widest">Option 1: Managed VA Plan</h3>
-                        <div class="h-px bg-gray-300 w-20"></div>
-                    </div>
-
+                    <div class="flex items-center justify-center space-x-4 mb-8"><div class="h-px bg-gray-300 w-20"></div><h3 class="text-2xl font-bold text-td-pink uppercase tracking-widest">Option 1: Managed VA Plan</h3><div class="h-px bg-gray-300 w-20"></div></div>
                     <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-td-pink relative">
-                        <div class="bg-td-pink text-white text-center py-2 text-sm font-bold uppercase tracking-wider">
-                            Most Popular for Flexible Needs
-                        </div>
-
+                        <div class="bg-td-pink text-white text-center py-2 text-sm font-bold uppercase tracking-wider">Most Popular for Flexible Needs</div>
                         <div class="p-8">
-                            <div class="mb-6 text-center">
-                                <p class="text-td-pink font-bold text-sm uppercase tracking-wide">
-                                    $0 Setup Fee
-                                </p>
-                                <p class="text-gray-500 text-xs mt-1">Recruiting is free!</p>
-                            </div>
-
+                            <div class="mb-6 text-center"><p class="text-td-pink font-bold text-sm uppercase tracking-wide">$0 Setup Fee</p></div>
                             <div class="grid md:grid-cols-2 gap-8 md:divide-x md:divide-gray-100">
-                                
                                 <div class="flex flex-col md:pr-8">
-                                    <div class="flex items-center mb-2">
-                                        <span class="bg-td-pink/10 text-td-pink text-xs font-bold px-2 py-1 rounded uppercase tracking-wide mr-2">Recommended</span>
-                                        <h4 class="text-2xl font-bold text-gray-900">Full-Time</h4>
-                                    </div>
-                                    <p class="text-sm text-gray-500 mb-4">Consistent, daily support (160 Hours/Mo).</p>
-                                    
-                                    <div class="mb-6">
-                                        <p class="text-4xl font-extrabold text-td-pink">$375<span class="text-lg text-gray-400 font-medium">/week</span></p>
-                                        <p class="text-sm font-semibold text-gray-500 mt-1">($1,500 / month)</p>
-                                        <p class="text-xs text-gray-400 mt-2 italic leading-tight">
-                                            *Rate: $1,500/mo for 160 hours. Excess hours are billed at $10/hr.
-                                        </p>
-                                    </div>
+                                    <div class="flex items-center mb-2"><span class="bg-td-pink/10 text-td-pink text-xs font-bold px-2 py-1 rounded uppercase tracking-wide mr-2">Recommended</span><h4 class="text-2xl font-bold text-gray-900">Full-Time</h4></div>
+                                    <div class="mb-6"><p class="text-4xl font-extrabold text-td-pink">$375<span class="text-lg text-gray-400 font-medium">/week</span></p><p class="text-sm font-semibold text-gray-500 mt-1">($1,500 / month)</p></div>
                                 </div>
-
                                 <div class="flex flex-col md:pl-8 border-t md:border-t-0 pt-8 md:pt-0">
                                     <h4 class="text-xl font-bold text-gray-900 mb-2">Part-Time</h4>
-                                    <p class="text-sm text-gray-500 mb-4">Steady help for smaller workloads (80 Hours/Mo).</p>
-                                    
-                                    <div class="mb-6">
-                                        <p class="text-3xl font-bold text-gray-800">$200<span class="text-lg text-gray-400 font-medium">/week</span></p>
-                                        <p class="text-sm font-semibold text-gray-500 mt-1">($800 / month)</p>
-                                        <p class="text-xs text-gray-400 mt-2 italic leading-tight">
-                                            *Rate: $800/mo for 80 hours. Excess hours are billed at $10/hr.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="mt-6">
-                                <div class="grid sm:grid-cols-2 gap-y-3 gap-x-8 max-w-2xl mx-auto">
-                                    <div class="flex items-start">
-                                        <i data-lucide="check-circle-2" class="w-5 h-5 text-td-pink mr-3 flex-shrink-0 mt-0.5"></i>
-                                        <span class="text-gray-700 text-sm font-medium">Weekly Billing, Every Monday</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <i data-lucide="check-circle-2" class="w-5 h-5 text-td-pink mr-3 flex-shrink-0 mt-0.5"></i>
-                                        <span class="text-gray-700 text-sm font-medium">Pick & Choose Who To Work With</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <i data-lucide="check-circle-2" class="w-5 h-5 text-td-pink mr-3 flex-shrink-0 mt-0.5"></i>
-                                        <span class="text-gray-700 text-sm font-medium">VAs Based In The Philippines</span>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <i data-lucide="check-circle-2" class="w-5 h-5 text-td-pink mr-3 flex-shrink-0 mt-0.5"></i>
-                                        <span class="text-gray-700 text-sm font-medium">Work With The Same Person, Everyday</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bg-gray-50 p-6 border-t border-gray-200 text-center md:text-left">
-                            <div class="flex flex-col md:flex-row items-start md:items-center gap-4">
-                                <div class="bg-white p-2 rounded-full shadow-sm text-td-pink hidden md:block">
-                                    <i data-lucide="credit-card" class="w-6 h-6"></i>
-                                </div>
-                                <div>
-                                    <h5 class="font-bold text-gray-900 text-sm uppercase tracking-wide mb-1">Billing & Payment Terms</h5>
-                                    <p class="text-gray-600 text-sm leading-relaxed">
-                                        To ensure uninterrupted support, all plans are <strong>billed weekly in advance</strong>, reserving your VA's schedule exclusively for you. If you have a busy week and need overtime, we’ve got you covered at a simple rate of <strong>$10/hr</strong> for excess hours.
-                                    </p>
+                                    <div class="mb-6"><p class="text-3xl font-bold text-gray-800">$200<span class="text-lg text-gray-400 font-medium">/week</span></p><p class="text-sm font-semibold text-gray-500 mt-1">($800 / month)</p></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <div class="mb-20">
-                    <div class="flex items-center justify-center space-x-4 mb-8">
-                        <div class="h-px bg-gray-300 w-20"></div>
-                        <h3 class="text-2xl font-bold text-td-primary uppercase tracking-widest">Option 2: Direct Hire Model</h3>
-                        <div class="h-px bg-gray-300 w-20"></div>
-                    </div>
-
+                    <div class="flex items-center justify-center space-x-4 mb-8"><div class="h-px bg-gray-300 w-20"></div><h3 class="text-2xl font-bold text-td-primary uppercase tracking-widest">Option 2: Direct Hire Model</h3><div class="h-px bg-gray-300 w-20"></div></div>
                     <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch">
-
                         <div class="bg-white p-6 rounded-xl shadow-lg border-t-8 border-td-primary hover:shadow-2xl transition duration-500 flex flex-col">
-                            <div class="flex justify-between items-start mb-4">
-                                <i data-lucide="trending-up" class="w-10 h-10 text-td-primary"></i>
-                                <span class="bg-gray-100 text-gray-500 text-xs px-2 py-1 rounded">Step 1</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Placement Fee</h3>
-                            <p class="text-3xl font-extrabold text-td-primary mb-4">15%</p>
-                            <p class="text-gray-600 text-sm flex-grow">Charged once the offer is signed. Calculated based on the VA's Year 1 salary.</p>
-                            <div class="mt-4 p-3 bg-td-primary/10 rounded-lg text-xs font-medium text-td-primary text-center">
-                                Recruiting is FREE!
-                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Placement Fee</h3><p class="text-3xl font-extrabold text-td-primary mb-4">15%</p><p class="text-gray-600 text-sm flex-grow">Calculated based on the VA's Year 1 salary.</p>
                         </div>
-
                         <div class="flip-card w-full h-full min-h-[300px]">
                             <div class="flip-card-inner">
-                                <div class="flip-card-front">
-                                    <i data-lucide="award" class="w-12 h-12 text-td-secondary mb-4"></i>
-                                    <h3 class="text-xl font-bold text-gray-900 mb-2">Direct Hire Guarantee</h3>
-                                    <p class="text-lg font-semibold text-td-secondary mb-4">Click to See Promise!</p>
-                                    <p class="text-gray-500 text-xs mt-2">Exclusive to our Direct Hire placements.</p>
-                                </div>
-                                <div class="flip-card-back bg-td-secondary border-none">
-                                    <i data-lucide="handshake" class="w-12 h-12 text-white mb-4"></i>
-                                    <h3 class="text-xl font-bold mb-2">FREE Replacement!</h3>
-                                    <p class="text-sm font-light leading-relaxed px-4">If you are dissatisfied with the VA's performance within the first 6 months, we will source and place a <strong>free replacement</strong> immediately.</p>
-                                </div>
+                                <div class="flip-card-front"><i data-lucide="award" class="w-12 h-12 text-td-secondary mb-4"></i><h3 class="text-xl font-bold text-gray-900 mb-2">Direct Hire Guarantee</h3><p class="text-lg font-semibold text-td-secondary mb-4">Click to See Promise!</p></div>
+                                <div class="flip-card-back bg-td-secondary border-none"><h3 class="text-xl font-bold mb-2">FREE Replacement!</h3><p class="text-sm font-light leading-relaxed px-4">Within first 6 months.</p></div>
                             </div>
                         </div>
-
-                    </div>
-                </div>
-
-                <div class="max-w-5xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200">
-                    <div class="bg-gray-800 text-white p-6 text-center">
-                        <h3 class="text-2xl font-bold">Which Model is Right For You?</h3>
-                        <p class="text-gray-300 mt-2 text-sm">Compare the key differences to find your perfect fit.</p>
-                    </div>
-                    
-                    <div class="overflow-x-auto">
-                        <table class="w-full text-left border-collapse">
-                            <thead>
-                                <tr class="bg-gray-50 border-b border-gray-200 text-sm uppercase tracking-wider text-gray-600">
-                                    <th class="p-4 font-semibold w-1/4">Feature</th>
-                                    <th class="p-4 font-bold text-td-pink w-1/3">Option 1: Managed VA Plan</th>
-                                    <th class="p-4 font-bold text-td-primary w-1/3">Option 2: Direct Hire</th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-gray-100 text-sm md:text-base">
-                                <tr class="hover:bg-gray-50 transition">
-                                    <td class="p-4 font-semibold text-gray-700">Best For</td>
-                                    <td class="p-4 text-gray-600">Testing the waters, flexibility, or project-based needs.</td>
-                                    <td class="p-4 text-gray-600">Building a permanent, long-term core team.</td>
-                                </tr>
-                                <tr class="hover:bg-gray-50 transition">
-                                    <td class="p-4 font-semibold text-gray-700">Upfront Cost</td>
-                                    <td class="p-4 text-td-pink font-bold">$0 Setup Fee</td>
-                                    <td class="p-4 text-td-primary font-bold">$0 Setup Fee</td>
-                                </tr>
-                                <tr class="hover:bg-gray-50 transition">
-                                    <td class="p-4 font-semibold text-gray-700">Billing Frequency</td>
-                                    <td class="p-4 text-gray-600 font-medium">Weekly Payments (In Advance)</td>
-                                    <td class="p-4 text-gray-600">Direct Salary to VA + One-Time Fee.</td>
-                                </tr>
-                                 <tr class="hover:bg-gray-50 transition">
-                                    <td class="p-4 font-semibold text-gray-700">Cost Structure</td>
-                                    <td class="p-4 text-gray-600">$200/wk (Part-Time) or $375/wk (Full-Time)</td>
-                                    <td class="p-4 text-gray-600">Placement Fee: 15% calculated based on the VA's Year 1 salary.</td>
-                                </tr>
-                                <tr class="hover:bg-gray-50 transition">
-                                    <td class="p-4 font-semibold text-gray-700">Payroll Handling</td>
-                                    <td class="p-4 text-gray-600">Managed by TwinDesk.</td>
-                                    <td class="p-4 text-gray-600">Managed by You (Direct to VA).</td>
-                                </tr>
-                                <tr class="hover:bg-gray-50 transition">
-                                    <td class="p-4 font-semibold text-gray-700">Work Hours</td>
-                                    <td class="p-4 text-gray-600">Flexible: Full-Time or Part-Time options.</td>
-                                    <td class="p-4 text-gray-600">Custom (Usually Full-Time).</td>
-                                </tr>
-                            </tbody>
-                        </table>
                     </div>
                 </div>
             </div>
@@ -598,270 +138,53 @@
         <section id="team" class="py-12 bg-td-pink/10">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="text-4xl font-extrabold text-gray-900 mb-10">Meet Our TwinDesk Family</h2>
-                
                 <div class="flex flex-wrap justify-center gap-6">
-                    
                     <div class="flip-card w-56 h-72">
                         <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <div class="w-24 h-24 mx-auto mb-3 relative">
-                                     <img src="https://live.staticflickr.com/65535/54906421933_24a3b62172_z.jpg" alt="Maria Cristina Garcia" class="w-full h-full object-cover rounded-full border-2 border-td-primary shadow-sm">
-                                </div>
-                                <h3 class="text-lg font-bold text-gray-900">Maria</h3>
-                                <p class="text-td-primary font-semibold text-xs uppercase tracking-wide mt-2">Co-Founder & Client Success</p>
-                                <div class="mt-auto text-gray-400 text-xs flex items-center justify-center">
-                                    <span>Hover to Read Bio</span>
-                                    <i data-lucide="refresh-cw" class="w-3 h-3 ml-1"></i>
-                                </div>
-                            </div>
-                            <div class="flip-card-back bg-td-primary">
-                                <h4 class="font-bold text-base mb-3">About Maria</h4>
-                                <p class="text-xs leading-relaxed px-1">
-                                    Maria ensures that every client partnership is built on a foundation of trust and clear communication. She matches you with talent that fits your company culture perfectly.
-                                </p>
-                            </div>
+                            <div class="flip-card-front"><div class="w-24 h-24 mx-auto mb-3 relative"><img src="https://live.staticflickr.com/65535/54906421933_24a3b62172_z.jpg" class="w-full h-full object-cover rounded-full border-2 border-td-primary shadow-sm"></div><h3 class="text-lg font-bold text-gray-900">Maria</h3><p class="text-td-primary font-semibold text-xs uppercase tracking-wide mt-2">Co-Founder & Client Success</p></div>
+                            <div class="flip-card-back bg-td-primary"><h4 class="font-bold text-base mb-3">About Maria</h4><p class="text-xs leading-relaxed px-1">Ensures client partnerships are built on trust.</p></div>
                         </div>
                     </div>
-
                     <div class="flip-card w-56 h-72">
                         <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <div class="w-24 h-24 mx-auto mb-3 relative">
-                                     <img src="https://live.staticflickr.com/65535/54940452752_6e9fa8096c_n.jpg" alt="Suzette Mejia" class="w-full h-full object-cover rounded-full border-2 border-td-orange shadow-sm">
-                                </div>
-                                <h3 class="text-lg font-bold text-gray-900">Suzette</h3>
-                                <p class="text-td-orange font-semibold text-xs uppercase tracking-wide mt-2">Co-Founder & Growth</p>
-                                <div class="mt-auto text-gray-400 text-xs flex items-center justify-center">
-                                    <span>Hover to Read Bio</span>
-                                    <i data-lucide="refresh-cw" class="w-3 h-3 ml-1"></i>
-                                </div>
-                            </div>
-                            <div class="flip-card-back bg-td-orange">
-                                <h4 class="font-bold text-base mb-3">About Suzette</h4>
-                                <p class="text-xs leading-relaxed px-1">
-                                    Suzette focuses on strategic expansion. With a keen eye for operational scalability, she ensures every placement translates into measurable growth and efficiency.
-                                </p>
-                            </div>
+                            <div class="flip-card-front"><div class="w-24 h-24 mx-auto mb-3 relative"><img src="https://live.staticflickr.com/65535/54940452752_6e9fa8096c_n.jpg" class="w-full h-full object-cover rounded-full border-2 border-td-orange shadow-sm"></div><h3 class="text-lg font-bold text-gray-900">Suzette</h3><p class="text-td-orange font-semibold text-xs uppercase tracking-wide mt-2">Co-Founder & Growth</p></div>
+                            <div class="flip-card-back bg-td-orange"><h4 class="font-bold text-base mb-3">About Suzette</h4><p class="text-xs leading-relaxed px-1">Focuses on strategic expansion and scalability.</p></div>
                         </div>
                     </div>
-
                     <div class="flip-card w-56 h-72">
                         <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <div class="w-24 h-24 mx-auto mb-3 relative">
-                                     <img src="https://live.staticflickr.com/65535/54941325546_61c8851cb4_n.jpg" alt="Jay Manguera" class="w-full h-full object-cover rounded-full border-2 border-td-pink shadow-sm">
-                                </div>
-                                <h3 class="text-lg font-bold text-gray-900">John</h3>
-                                <p class="text-td-pink font-semibold text-xs uppercase tracking-wide mt-2">Ops / Admin Manager</p>
-                                <div class="mt-auto text-gray-400 text-xs flex items-center justify-center">
-                                    <span>Hover to Read Bio</span>
-                                    <i data-lucide="refresh-cw" class="w-3 h-3 ml-1"></i>
-                                </div>
-                            </div>
-                            <div class="flip-card-back bg-td-pink">
-                                <h4 class="font-bold text-base mb-3">About John</h4>
-                                <p class="text-xs leading-relaxed px-1">
-                                    John oversees the backbone of TwinDesk operations. He ensures every internal process runs seamlessly, guaranteeing stability and efficiency for our team and yours.
-                                </p>
-                            </div>
+                            <div class="flip-card-front"><div class="w-24 h-24 mx-auto mb-3 relative"><img src="https://live.staticflickr.com/65535/54941325546_61c8851cb4_n.jpg" class="w-full h-full object-cover rounded-full border-2 border-td-pink shadow-sm"></div><h3 class="text-lg font-bold text-gray-900">John</h3><p class="text-td-pink font-semibold text-xs uppercase tracking-wide mt-2">Ops / Admin Manager</p></div>
+                            <div class="flip-card-back bg-td-pink"><h4 class="font-bold text-base mb-3">About John</h4><p class="text-xs leading-relaxed px-1">Oversees operations backbone.</p></div>
                         </div>
                     </div>
-
                     <div class="flip-card w-56 h-72">
                         <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <div class="w-24 h-24 mx-auto mb-3 relative">
-                                     <img src="https://live.staticflickr.com/65535/54941528818_088b5bc10f_n.jpg" alt="Princess Aran" class="w-full h-full object-cover rounded-full border-2 border-td-secondary shadow-sm">
-                                </div>
-                                <h3 class="text-lg font-bold text-gray-900">Princess</h3>
-                                <p class="text-td-secondary font-semibold text-xs uppercase tracking-wide mt-2">HR & Recruitment</p>
-                                <div class="mt-auto text-gray-400 text-xs flex items-center justify-center">
-                                    <span>Hover to Read Bio</span>
-                                    <i data-lucide="refresh-cw" class="w-3 h-3 ml-1"></i>
-                                </div>
-                            </div>
-                            <div class="flip-card-back bg-td-secondary">
-                                <h4 class="font-bold text-base mb-3">About Princess</h4>
-                                <p class="text-xs leading-relaxed px-1">
-                                    Princess is the gatekeeper of quality. She manages our recruitment pipeline, screening hundreds of applicants to find the top 1% of Virtual Assistants for you.
-                                </p>
-                            </div>
+                            <div class="flip-card-front"><div class="w-24 h-24 mx-auto mb-3 relative"><img src="https://live.staticflickr.com/65535/54941528818_088b5bc10f_n.jpg" class="w-full h-full object-cover rounded-full border-2 border-td-secondary shadow-sm"></div><h3 class="text-lg font-bold text-gray-900">Princess</h3><p class="text-td-secondary font-semibold text-xs uppercase tracking-wide mt-2">HR & Recruitment</p></div>
+                            <div class="flip-card-back bg-td-secondary"><h4 class="font-bold text-base mb-3">About Princess</h4><p class="text-xs leading-relaxed px-1">Gatekeeper of quality talent.</p></div>
                         </div>
                     </div>
-
                     <div class="flip-card w-56 h-72">
                         <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <div class="w-24 h-24 mx-auto mb-3 relative">
-                                     <img src="https://live.staticflickr.com/65535/54940462787_d46ed4827e_n.jpg" alt="Jayson Garcia" class="w-full h-full object-cover rounded-full border-2 border-td-orange shadow-sm">
-                                </div>
-                                <h3 class="text-lg font-bold text-gray-900">Jayson</h3>
-                                <p class="text-td-orange font-semibold text-xs uppercase tracking-wide mt-2">Recruiting Specialist</p>
-                                <div class="mt-auto text-gray-400 text-xs flex items-center justify-center">
-                                    <span>Hover to Read Bio</span>
-                                    <i data-lucide="refresh-cw" class="w-3 h-3 ml-1"></i>
-                                </div>
-                            </div>
-                            <div class="flip-card-back bg-td-orange">
-                                <h4 class="font-bold text-base mb-3">About Jayson</h4>
-                                <p class="text-xs leading-relaxed px-1">
-                                    Jayson is our talent scout. He proactively hunts for candidates with specialized skill sets, ensuring niche requirements are met swiftly with high-caliber pros.
-                                </p>
-                            </div>
+                            <div class="flip-card-front"><div class="w-24 h-24 mx-auto mb-3 relative"><img src="https://live.staticflickr.com/65535/54940462787_d46ed4827e_n.jpg" class="w-full h-full object-cover rounded-full border-2 border-td-orange shadow-sm"></div><h3 class="text-lg font-bold text-gray-900">Jayson</h3><p class="text-td-orange font-semibold text-xs uppercase tracking-wide mt-2">Recruiting Specialist</p></div>
+                            <div class="flip-card-back bg-td-orange"><h4 class="font-bold text-base mb-3">About Jayson</h4><p class="text-xs leading-relaxed px-1">Proactively hunts for niche talent.</p></div>
                         </div>
                     </div>
-
                 </div>
-                 <p class="mt-12 text-gray-600 italic max-w-3xl mx-auto">
-                    "Our mission is to empower professionals by pairing them with pre-vetted VAs who don't just complete tasks, but proactively drive growth and efficiency from day one."
-                </p>
             </div>
         </section>
         
         <section id="faq" class="py-20 bg-gray-50 border-t border-gray-200">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-4">Frequently Asked Questions</h2>
-                <p class="text-xl text-center text-gray-500 mb-12">
-                    Everything you need to know about joining the TwinDesk family.
-                </p>
-
                 <div class="space-y-4">
-
                     <div class="border border-gray-200 bg-white rounded-xl overflow-hidden shadow-sm">
-                        <button class="accordion w-full flex justify-between items-center p-6 text-lg font-semibold text-left text-gray-800 hover:bg-gray-50 transition duration-300" aria-expanded="false" data-target="faq-1">
-                            <span>What exactly is TwinDesk?</span>
-                            <i data-lucide="chevron-down" class="accordion-icon w-6 h-6 text-td-primary"></i>
-                        </button>
-                        <div id="faq-1" class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                            <div class="p-6 text-gray-600 border-t border-gray-100">
-                                <p class="mb-4">TwinDesk isn't just an agency; we are a dedicated team connecting small business owners with elite, pre-vetted support from the Philippines. Think of us as your operational partners.</p>
-                                <p>Whether you need administrative relief to clear your inbox or creative firepower to launch a new brand, our in-house team of experienced "Twinies" is ready to jump in with enthusiasm and expertise.</p>
-                            </div>
-                        </div>
+                        <button class="accordion w-full flex justify-between items-center p-6 text-lg font-semibold text-left text-gray-800 hover:bg-gray-50 transition duration-300" aria-expanded="false" data-target="faq-1"><span>What exactly is TwinDesk?</span><i data-lucide="chevron-down" class="accordion-icon w-6 h-6 text-td-primary"></i></button>
+                        <div id="faq-1" class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"><div class="p-6 text-gray-600 border-t border-gray-100"><p>TwinDesk connects small business owners with elite, pre-vetted support from the Philippines.</p></div></div>
                     </div>
-
                     <div class="border border-gray-200 bg-white rounded-xl overflow-hidden shadow-sm">
-                        <button class="accordion w-full flex justify-between items-center p-6 text-lg font-semibold text-left text-gray-800 hover:bg-gray-50 transition duration-300" aria-expanded="false" data-target="faq-location">
-                            <span>Where are TwinDesk Virtual Assistants based?</span>
-                            <i data-lucide="chevron-down" class="accordion-icon w-6 h-6 text-td-primary"></i>
-                        </button>
-                        <div id="faq-location" class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                            <div class="p-6 text-gray-600 border-t border-gray-100">
-                                <p class="mb-4">Our reliable and dedicated Virtual Assistants are based in the <strong>Philippines</strong>, a beautiful tropical country known for a friendly and hard-working labor force.</p>
-                                <p class="mb-4">Working with a Filipino Virtual Assistant means scaling your business in an efficient and cost-effective manner. It also enables an increased quality of life for your VA, offering pay rates significantly higher than the local average.</p>
-                                <ul class="list-disc pl-5 space-y-2">
-                                    <li><strong>English Proficiency:</strong> Filipinos are generally more proficient in English than those in other non-native English speaking countries, ensuring effective communication with your customers and vendors.</li>
-                                    <li><strong>Work Ethic:</strong> Filipinos are known for great qualities such as respect, diligence, loyalty, and commitment.</li>
-                                    <li><strong>Flexibility:</strong> They are often highly adaptable when it comes to working with different time zones and schedule changes.</li>
-                                </ul>
-                            </div>
-                        </div>
+                        <button class="accordion w-full flex justify-between items-center p-6 text-lg font-semibold text-left text-gray-800 hover:bg-gray-50 transition duration-300" aria-expanded="false" data-target="faq-billing"><span>How does billing work?</span><i data-lucide="chevron-down" class="accordion-icon w-6 h-6 text-td-primary"></i></button>
+                        <div id="faq-billing" class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"><div class="p-6 text-gray-600 border-t border-gray-100"><p>Plans are billed weekly in advance every Monday.</p></div></div>
                     </div>
-                    
-                     <div class="border border-gray-200 bg-white rounded-xl overflow-hidden shadow-sm">
-                        <button class="accordion w-full flex justify-between items-center p-6 text-lg font-semibold text-left text-gray-800 hover:bg-gray-50 transition duration-300" aria-expanded="false" data-target="faq-model">
-                            <span>What is the difference between Managed VA Plan and Direct Hire?</span>
-                            <i data-lucide="chevron-down" class="accordion-icon w-6 h-6 text-td-primary"></i>
-                        </button>
-                        <div id="faq-model" class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                            <div class="p-6 text-gray-600 border-t border-gray-100">
-                                <p class="mb-4"><strong>Option 1: Managed VA Plan</strong> is designed for flexibility. It has no setup fees, no long-term contracts, and TwinDesk manages the payroll. You can choose between Full-Time ($1,500/mo) or Part-Time ($800/mo) support, billed weekly.</p>
-                                <p><strong>Option 2: Direct Hire Model</strong> is best for building a permanent core team. You pay a one-time placement fee and then employ the VA directly, paying their salary yourself. This implies a long-term employment intention.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="border border-gray-200 bg-white rounded-xl overflow-hidden shadow-sm">
-                        <button class="accordion w-full flex justify-between items-center p-6 text-lg font-semibold text-left text-gray-800 hover:bg-gray-50 transition duration-300" aria-expanded="false" data-target="faq-billing">
-                            <span>How does billing work for the Managed VA Plan?</span>
-                            <i data-lucide="chevron-down" class="accordion-icon w-6 h-6 text-td-primary"></i>
-                        </button>
-                        <div id="faq-billing" class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                            <div class="p-6 text-gray-600 border-t border-gray-100">
-                                <p class="mb-4">To ensure seamless service and guaranteed availability, our Managed VA Plans are <strong>billed weekly in advance</strong> every Monday.</p>
-                                <p>This payment structure reserves your VA's time exclusively for you for the upcoming week, ensuring no interruptions to your workflow.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="border border-gray-200 bg-white rounded-xl overflow-hidden shadow-sm">
-                        <button class="accordion w-full flex justify-between items-center p-6 text-lg font-semibold text-left text-gray-800 hover:bg-gray-50 transition duration-300" aria-expanded="false" data-target="faq-2">
-                            <span>How can TwinDesk specifically help my business?</span>
-                            <i data-lucide="chevron-down" class="accordion-icon w-6 h-6 text-td-primary"></i>
-                        </button>
-                        <div id="faq-2" class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                            <div class="p-6 text-gray-600 border-t border-gray-100">
-                                <p class="mb-4">Think of a TwinDesk VA as a remote extension of your office. If a task can be done with a laptop and an internet connection, we can handle it with confidence. Our talent pool includes specialists in:</p>
-                                <ul class="list-disc pl-5 space-y-2">
-                                    <li><strong>Administrative:</strong> Inbox management, legal drafting, CRM updates, and file organization.</li>
-                                    <li><strong>Creative:</strong> Video editing, graphic design, podcast production, and branding.</li>
-                                    <li><strong>Growth:</strong> Social media management, SEO, and digital marketing.</li>
-                                    <li><strong>Tech:</strong> Website maintenance and e-commerce store support.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="border border-gray-200 bg-white rounded-xl overflow-hidden shadow-sm">
-                        <button class="accordion w-full flex justify-between items-center p-6 text-lg font-semibold text-left text-gray-800 hover:bg-gray-50 transition duration-300" aria-expanded="false" data-target="faq-3">
-                            <span>How is TwinDesk different from other VA agencies?</span>
-                            <i data-lucide="chevron-down" class="accordion-icon w-6 h-6 text-td-primary"></i>
-                        </button>
-                        <div id="faq-3" class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                            <div class="p-6 text-gray-600 border-t border-gray-100">
-                                <p class="mb-4">It comes down to <strong>Heart and Support.</strong> Unlike faceless marketplaces, we treat our VAs and Clients like family—which means they treat your business with that same level of care.</p>
-                                <p class="mb-4"><strong>For our VAs:</strong> We provide continuous upskilling and a support network of IT and Quality Assurance specialists. They never work alone, meaning you get the brainpower of a whole team.</p>
-                                <p><strong>For You:</strong> You get a dedicated Client Success Manager to ensure smooth sailing. Plus, our pricing is transparent—no hidden fees, no locked-in contracts. If your VA doesn't work, you don't pay. We are built on trust.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="border border-gray-200 bg-white rounded-xl overflow-hidden shadow-sm">
-                        <button class="accordion w-full flex justify-between items-center p-6 text-lg font-semibold text-left text-gray-800 hover:bg-gray-50 transition duration-300" aria-expanded="false" data-target="faq-4">
-                            <span>How does the process work?</span>
-                            <i data-lucide="chevron-down" class="accordion-icon w-6 h-6 text-td-primary"></i>
-                        </button>
-                        <div id="faq-4" class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                            <div class="p-6 text-gray-600 border-t border-gray-100">
-                                <p class="mb-4">Getting started is as easy as 1-2-3:</p>
-                                <ol class="list-decimal pl-5 space-y-2">
-                                    <li><strong>The Discovery:</strong> We chat about your pain points and the perfect candidate profile.</li>
-                                    <li><strong>The Match:</strong> We hand-pick the best talent for you to interview. You choose your favorite (or favorites!).</li>
-                                    <li><strong>The Launch:</strong> Onboard them just like a local employee. We guide you through the integration so you hit the ground running immediately.</li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="border border-gray-200 bg-white rounded-xl overflow-hidden shadow-sm">
-                        <button class="accordion w-full flex justify-between items-center p-6 text-lg font-semibold text-left text-gray-800 hover:bg-gray-50 transition duration-300" aria-expanded="false" data-target="faq-timeline">
-                            <span>How long will it take to find my Virtual Assistant?</span>
-                            <i data-lucide="chevron-down" class="accordion-icon w-6 h-6 text-td-primary"></i>
-                        </button>
-                        <div id="faq-timeline" class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                            <div class="p-6 text-gray-600 border-t border-gray-100">
-                                <p class="mb-4">The time frame required to find you the best matched VA depends on your specific requirements, commonality or rarity of mandatory skills, as well as the industry your business is in.</p>
-                                <p class="mb-4">For example, if your business is a computer software company that works with uncommon programming languages (other than C++, Java, Ruby, etc) it may be difficult and could take longer to find a VA who has the exact programming language skills you are searching for. But rest assured we do not stop looking!</p>
-                                <p class="mb-4">If your business requires common skills, like soft skills (customer service, phone calls, interacting with people, etc) then we will be able to match you with a VA much quicker and likely with several options to choose from.</p>
-                                <p class="mb-4">In the meantime, we invest a good amount of effort learning about your business needs, screening our current pool of Virtual Assistants, and keeping our eyes out to find the perfect VA for your business.</p>
-                                <p>We want to provide you with a well matched and dedicated Virtual Assistant as quickly as possible, as it is also very exciting to watch our VAs and clients forge long-term profitable relationships while seeing their businesses grow.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="border border-gray-200 bg-white rounded-xl overflow-hidden shadow-sm">
-                        <button class="accordion w-full flex justify-between items-center p-6 text-lg font-semibold text-left text-gray-800 hover:bg-gray-50 transition duration-300" aria-expanded="false" data-target="faq-5">
-                            <span>Can I talk to someone before I decide?</span>
-                            <i data-lucide="chevron-down" class="accordion-icon w-6 h-6 text-td-primary"></i>
-                        </button>
-                        <div id="faq-5" class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                            <div class="p-6 text-gray-600 border-t border-gray-100">
-                                <p class="mb-4">Absolutely! We know hiring is a big decision, and we’d love to chat.</p>
-                                <p>Schedule a free, no-pressure consultation with us. We can discuss your specific business goals, analyze your current workflow, and show you exactly where a VA can save you time and money. If you aren't sure what you need yet, we can help you figure that out, too!</p>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </section>
@@ -869,108 +192,26 @@
         <section id="schedule-call" class="py-20 bg-td-primary/90 text-white">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="text-4xl font-extrabold mb-4">Ready to Reclaim Your Time?</h2>
-                <p class="text-xl font-light mb-10">We're ready to help you eliminate hiring risk and find your elite VA.</p>
-
-                
-                <a href="https://calendly.com/info-twindesk/30min" target="_blank" class="inline-block bg-td-pink text-white text-xl font-bold px-10 py-4 rounded-xl shadow-2xl hover:bg-td-orange transition duration-300 transform hover:scale-105 mb-12">
-                    Schedule Call Now (30 Min)
-                </a>
-
-                
-                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-8 text-lg">
-                    <a href="#" class="flex items-center justify-center font-medium hover:text-td-light-orange transition duration-300">
-                        <i data-lucide="facebook" class="w-6 h-6 mr-2"></i> Message us on Facebook
-                    </a>
-                    <a href="mailto:info.twindesk@gmail.com" class="flex items-center justify-center font-medium hover:text-td-light-orange transition duration-300">
-                        <i data-lucide="mail" class="w-6 h-6 mr-2"></i> info.twindesk@gmail.com
-                    </a>
-                    <a href="https://www.linkedin.com/company/twindesk/" target="_blank" class="flex items-center justify-center font-medium hover:text-td-light-orange transition duration-300">
-                        <i data-lucide="linkedin" class="w-6 h-6 mr-2"></i> Follow us on LinkedIn
-                    </a>
-                </div>
+                <a href="https://calendly.com/info-twindesk/30min" target="_blank" class="inline-block bg-td-pink text-white text-xl font-bold px-10 py-4 rounded-xl shadow-2xl hover:bg-td-orange transition duration-300 transform hover:scale-105 mb-12">Schedule Call Now (30 Min)</a>
             </div>
         </section>
     </main>
 
-    
     <footer class="bg-gray-800 text-white py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
-            
-            <div class="mb-4 md:mb-0">
-                 <img src="https://live.staticflickr.com/65535/54901201395_a052e1f973_b.jpg" alt="TwinDesk Logo" class="h-12 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition duration-300"/>
-            </div>
-
+            <div class="mb-4 md:mb-0"><img src="https://live.staticflickr.com/65535/54901201395_a052e1f973_b.jpg" alt="TwinDesk Logo" class="h-12 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition duration-300"/></div>
             <nav class="flex flex-wrap justify-center gap-6 mb-4 md:mb-0">
-                <a href="#home" class="text-gray-400 hover:text-white transition duration-300">Home</a>
+                <a href="index.html" class="text-white font-semibold transition duration-300">Home</a>
                 <a href="our-virtual-assistants.html" class="text-gray-400 hover:text-white transition duration-300">Our Virtual Assistants</a>
-                <a href="#process" class="text-gray-400 hover:text-white transition duration-300">VA Matching Process</a>
+                <a href="va-matching-process.html" class="text-gray-400 hover:text-white transition duration-300">VA Matching Process</a>
                 <a href="#pricing" class="text-gray-400 hover:text-white transition duration-300">Pricing</a>
                 <a href="#team" class="text-gray-400 hover:text-white transition duration-300">Team</a>
                 <a href="#faq" class="text-gray-400 hover:text-white transition duration-300">FAQ</a>
             </nav>
-
-            <div class="text-gray-400 text-sm">
-                &copy; 2024 TwinDesk. All rights reserved.
-            </div>
+            <div class="text-gray-400 text-sm">&copy; 2024 TwinDesk. All rights reserved.</div>
         </div>
     </footer>
 
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Initialize Lucide Icons
-            lucide.createIcons();
-
-            const accordionButtons = document.querySelectorAll('.accordion');
-
-            accordionButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const targetId = button.getAttribute('data-target');
-                    const targetContent = document.getElementById(targetId);
-                    const isExpanded = button.getAttribute('aria-expanded') === 'true';
-
-                    // Close all other open accordions
-                    accordionButtons.forEach(otherButton => {
-                        if (otherButton !== button) {
-                            otherButton.setAttribute('aria-expanded', 'false');
-                            const otherContent = document.getElementById(otherButton.getAttribute('data-target'));
-                            otherContent.style.maxHeight = null;
-                            
-                            // Visual reset for FAQ arrows
-                            const icon = otherButton.querySelector('.accordion-icon');
-                            if(icon) icon.style.transform = 'rotate(0deg)';
-                        }
-                    });
-
-                    // Toggle the clicked accordion
-                    if (isExpanded) {
-                        button.setAttribute('aria-expanded', 'false');
-                        targetContent.style.maxHeight = null;
-                        
-                        // Visual reset for arrow
-                        const icon = button.querySelector('.accordion-icon');
-                        if(icon) icon.style.transform = 'rotate(0deg)';
-
-                    } else {
-                        button.setAttribute('aria-expanded', 'true');
-                        // Use scrollHeight to set the height dynamically for smooth transition
-                        targetContent.style.maxHeight = targetContent.scrollHeight + "px";
-                        
-                        // Visual set for arrow
-                        const icon = button.querySelector('.accordion-icon');
-                        if(icon) icon.style.transform = 'rotate(180deg)';
-                    }
-                });
-            });
-
-            // Set initial transition styles for accordion content
-            const allContent = document.querySelectorAll('.accordion-content');
-            allContent.forEach(content => {
-                content.style.transition = 'max-height 0.5s ease-in-out';
-            });
-        });
-    </script>
-    
-    <script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+    <script>document.addEventListener('DOMContentLoaded', () => { lucide.createIcons(); const accordionButtons = document.querySelectorAll('.accordion'); accordionButtons.forEach(button => { button.addEventListener('click', () => { const targetId = button.getAttribute('data-target'); const targetContent = document.getElementById(targetId); const isExpanded = button.getAttribute('aria-expanded') === 'true'; accordionButtons.forEach(otherButton => { if (otherButton !== button) { otherButton.setAttribute('aria-expanded', 'false'); const otherContent = document.getElementById(otherButton.getAttribute('data-target')); otherContent.style.maxHeight = null; const icon = otherButton.querySelector('.accordion-icon'); if(icon) icon.style.transform = 'rotate(0deg)'; } }); if (isExpanded) { button.setAttribute('aria-expanded', 'false'); targetContent.style.maxHeight = null; const icon = button.querySelector('.accordion-icon'); if(icon) icon.style.transform = 'rotate(0deg)'; } else { button.setAttribute('aria-expanded', 'true'); targetContent.style.maxHeight = targetContent.scrollHeight + "px"; const icon = button.querySelector('.accordion-icon'); if(icon) icon.style.transform = 'rotate(180deg)'; } }); }); const allContent = document.querySelectorAll('.accordion-content'); allContent.forEach(content => { content.style.transition = 'max-height 0.5s ease-in-out'; }); });</script>
 </body>
 </html>
