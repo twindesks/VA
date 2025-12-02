@@ -125,6 +125,28 @@
                                 <span class="text-gray-700 text-base">Perform light research and assist with online tasks (5 hrs/wk)</span>
                             </label>
 
+                            <h3 class="task-category-heading text-xl">Bookkeeping & Accounts Receivable</h3>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="10" data-category="Bookkeeping" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Record daily AR transactions & reconcile customer payments (10 hrs/wk)</span>
+                            </label>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="8" data-category="Bookkeeping" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Prepare and send out invoices and account statements (8 hrs/wk)</span>
+                            </label>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="7" data-category="Bookkeeping" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Monitor aging reports and follow up on overdue accounts (7 hrs/wk)</span>
+                            </label>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="5" data-category="Bookkeeping" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Maintain accurate financial records in QuickBooks (5 hrs/wk)</span>
+                            </label>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="5" data-category="Bookkeeping" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Communicate with clients regarding billing inquiries (5 hrs/wk)</span>
+                            </label>
+
                             <h3 class="task-category-heading text-xl">Customer Service & Sales Support</h3>
                             <label class="task-item">
                                 <input type="checkbox" data-hours="15" data-category="Customer Service" class="task-checkbox">
@@ -197,6 +219,12 @@
                                 <span class="text-gray-700 text-base">Store maintenance & performance monitoring/reports (4 hrs/wk)</span>
                             </label>
 
+                            <h3 class="task-category-heading text-xl">Other Tasks</h3>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="5" data-category="Admin" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Others (Please specify) (5 hrs/wk)</span>
+                            </label>
+
                         </div>
                     </div>
                     
@@ -259,22 +287,25 @@
         document.addEventListener('DOMContentLoaded', () => {
             lucide.createIcons();
 
-            // Set up a mapping for VA Types to their primary category name
+            // Updated Mapping for VA Types
             const vaTypeMapping = {
                 'Admin': 'Administrative Assistant',
+                'Bookkeeping': 'Bookkeeper / AR Specialist', // NEW MAPPING
                 'Customer Service': 'Customer Service VA',
                 'Marketing': 'Marketing VA',
                 'Executive': 'Executive Assistant (EA)',
                 'E-commerce': 'E-commerce Specialist',
             };
             
-            // Set up a mapping for colors based on the suggested VA Type for the recommendation box
+            // Updated Mapping for Colors
             const vaColorMapping = {
                 'Administrative Assistant': 'text-td-primary',
+                'Bookkeeper / AR Specialist': 'text-td-secondary', // NEW COLOR
                 'Customer Service VA': 'text-td-pink',
                 'Marketing VA': 'text-td-orange',
-                'Executive Assistant (EA)': 'text-td-secondary',
-                'E-commerce Specialist': 'text-td-pink', // Using td-pink again, or you can define a new color
+                'Executive Assistant (EA)': 'text-td-primary', // Changed Executive to use primary color for contrast
+                'E-commerce Specialist': 'text-td-pink',
+                'General Tasks': 'text-gray-400',
             };
 
             const checkboxes = document.querySelectorAll('.task-checkbox');
@@ -282,7 +313,7 @@
             const vaCommitmentEl = document.getElementById('va-commitment');
             const vaTypeEl = document.getElementById('va-type');
             
-            const colorClasses = Object.values(vaColorMapping).join(' ') + ' text-gray-400 text-td-primary text-td-secondary';
+            const colorClasses = Object.values(vaColorMapping).join(' '); // Dynamically create the list of all color classes
 
             function updateRecommendation() {
                 let totalHours = 0;
@@ -306,10 +337,10 @@
 
                 if (totalHours >= 30) {
                     commitment = 'Full-Time VA';
-                    vaCommitmentEl.classList.add('text-td-primary'); // Full-Time uses primary color
+                    vaCommitmentEl.classList.add('text-td-primary');
                 } else if (totalHours >= 10) {
                     commitment = 'Part-Time VA';
-                    vaCommitmentEl.classList.add('text-td-secondary'); // Part-Time uses secondary color
+                    vaCommitmentEl.classList.add('text-td-secondary');
                 } else {
                     commitment = 'N/A';
                     vaCommitmentEl.classList.add('text-gray-400');
@@ -333,7 +364,7 @@
                 const vaTypeDisplayName = vaTypeMapping[topCategoryKey] || 'General Tasks';
                 vaTypeEl.textContent = vaTypeDisplayName;
 
-                // Simple color coding for VA Type
+                // Apply color coding for VA Type
                 vaTypeEl.classList.remove(colorClasses);
                 const typeColor = vaColorMapping[vaTypeDisplayName] || 'text-gray-400';
                 vaTypeEl.classList.add(typeColor);
@@ -346,10 +377,6 @@
 
             // Initial calculation on load
             updateRecommendation();
-
-            // The original accordion logic is removed as the tasks are now on one page.
-            // If you decide to re-add accordions, please use the original logic for that part.
-
         });
     </script>
 </body>
