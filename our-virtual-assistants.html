@@ -93,9 +93,7 @@
                 <a href="index.html" class="text-gray-600 hover:text-td-primary font-medium transition duration-300">Home</a>
                 <a href="our-virtual-assistants.html" class="text-td-primary font-bold transition duration-300">VA Assessment</a>
                 <a href="va-matching-process.html" class="text-gray-600 hover:text-td-primary font-medium transition duration-300">VA Matching Process</a>
-                <a href="index.html#team" class="text-gray-600 hover:text-td-primary font-medium transition duration-300">Team</a>
-                <a href="index.html#faq" class="text-gray-600 hover:text-td-primary font-medium transition duration-300">FAQ</a>
-            </nav>
+                </nav>
             <a href="https://calendly.com/info-twindesk/30min?month=2025-11" class="bg-td-primary text-white px-4 py-2 rounded-lg font-medium hover:bg-td-secondary transition duration-300 shadow-md" target="_blank">Schedule Call</a>
         </div>
     </header>
@@ -421,11 +419,11 @@
             const vaTypeEl = document.getElementById('va-type');
             const summaryInput = document.getElementById('summary-report-input');
             
-            // Collect all possible color classes used by the recommendation boxes
+            // Collect all possible color classes used by the recommendation boxes for cleaning
             const allColorClasses = Object.values(vaColorMapping).join(' ') + ' text-td-primary text-td-secondary text-td-pink text-td-orange text-gray-400';
 
             function removeAllColors(element) {
-                // Remove all classes that might interfere with the color application
+                // Efficiently remove all color classes before applying the new one
                 element.className = element.className.split(' ').filter(c => !c.startsWith('text-')).join(' ');
             }
 
@@ -448,7 +446,7 @@
 
                 let commitment = 'N/A';
                 
-                // Clear existing commitment color classes explicitly
+                // Clear existing commitment color classes
                 removeAllColors(vaCommitmentEl);
 
                 if (totalHours >= 30) {
@@ -479,7 +477,7 @@
                 const vaTypeDisplayName = vaTypeMapping[topCategoryKey] || 'General/Mixed Assistant';
                 vaTypeEl.textContent = vaTypeDisplayName;
 
-                // Clear existing VA Type color classes explicitly
+                // Clear existing VA Type color classes
                 removeAllColors(vaTypeEl);
 
                 const typeColor = vaColorMapping[vaTypeDisplayName] || 'text-gray-400';
