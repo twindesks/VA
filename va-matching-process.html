@@ -1,331 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VA Matching Process | TwinDesk</title>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'td-primary': '#3f9dd1',       
-                        'td-secondary': '#66aedd',     
-                        'td-pink': '#f27ea9',          
-                        'td-orange': '#faaf20',        
-                        'td-light-orange': '#ffdf99',  
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                },
-            },
-        }
-    </script>
-    
-    <style>
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; background-color: #f7f9fb; }
-        
-        .process-card {
-            transition: all 0.3s ease-in-out;
-        }
-        .process-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.1);
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VA Matching Process | TwinDesk</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'td-primary': '#3f9dd1',       
+                        'td-secondary': '#66aedd',     
+                        'td-pink': '#f27ea9',          
+                        'td-orange': '#faaf20',        
+                        'td-light-orange': '#ffdf99',  
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background-color: #f7f9fb; }
+        
+        .process-card {
+            transition: all 0.3s ease-in-out;
+        }
+        .process-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 
 <body>
 
-    <header class="bg-white sticky top-0 z-50 shadow-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <a href="index.html" title="TwinDesk Homepage" class="flex items-center">
-                <img src="https://live.staticflickr.com/65535/54901201395_a052e1f973_b.jpg" alt="TwinDesk Logo" class="h-20 w-auto md:h-24"/>
-            </a>
-            <nav class="hidden md:flex space-x-6 lg:space-x-8">
-                <a href="index.html" class="text-gray-600 hover:text-td-primary font-medium transition duration-300">Home</a>
-                <a href="our-virtual-assistants.html" class="text-gray-600 hover:text-td-primary font-medium transition duration-300">Our Virtual Assistants</a>
-                <a href="va-matching-process.html" class="text-td-primary font-bold transition duration-300">VA Matching Process</a>
-                <a href="index.html#pricing" class="text-gray-600 hover:text-td-primary font-medium transition duration-300">Pricing</a>
-                <a href="index.html#team" class="text-gray-600 hover:text-td-primary font-medium transition duration-300">Team</a>
-                <a href="index.html#faq" class="text-gray-600 hover:text-td-primary font-medium transition duration-300">FAQ</a>
-            </nav>
-            <a href="https://calendly.com/info-twindesk/30min?month=2025-11" class="bg-td-primary text-white px-4 py-2 rounded-lg font-medium hover:bg-td-secondary transition duration-300 shadow-md" target="_blank">
-                Schedule Call
-            </a>
-        </div>
-    </header>
+    <header class="bg-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="index.html" title="TwinDesk Homepage" class="flex items-center">
+                <img src="https://live.staticflickr.com/65535/54901201395_a052e1f973_b.jpg" alt="TwinDesk Logo" class="h-20 w-auto md:h-24"/>
+            </a>
+            <nav class="hidden md:flex space-x-6 lg:space-x-8">
+                <a href="index.html" class="text-gray-600 hover:text-td-primary font-medium transition duration-300">Home</a>
+                <a href="our-virtual-assistants.html" class="text-gray-600 hover:text-td-primary font-medium transition duration-300">Our Virtual Assistants</a>
+                <a href="va-matching-process.html" class="text-td-primary font-bold transition duration-300">VA Matching Process</a>
+                <a href="index.html#team" class="text-gray-600 hover:text-td-primary font-medium transition duration-300">Team</a>
+                <a href="index.html#faq" class="text-gray-600 hover:text-td-primary font-medium transition duration-300">FAQ</a>
+            </nav>
+            <a href="https://calendly.com/info-twindesk/30min?month=2025-11" class="bg-td-primary text-white px-4 py-2 rounded-lg font-medium hover:bg-td-secondary transition duration-300 shadow-md" target="_blank">
+                Schedule Call
+            </a>
+        </div>
+    </header>
 
-    <main>
-        <a href="https://wa.me/639054401660" target="_blank" class="fixed bottom-8 right-8 z-[100] bg-[#25D366] text-white px-6 py-3 rounded-full shadow-2xl hover:scale-105 transition-transform duration-300 flex items-center gap-3 border-2 border-white group animate-bounce hover:animate-none">
-            <i data-lucide="message-circle" class="w-6 h-6 fill-white text-[#25D366]"></i> 
-            <span class="font-bold text-lg tracking-wide">Let's Chat</span>
-        </a>
+    <main>
+        <a href="https://wa.me/639054401660" target="_blank" class="fixed bottom-8 right-8 z-[100] bg-[#25D366] text-white px-6 py-3 rounded-full shadow-2xl hover:scale-105 transition-transform duration-300 flex items-center gap-3 border-2 border-white group animate-bounce hover:animate-none">
+            <i data-lucide="message-circle" class="w-6 h-6 fill-white text-[#25D366]"></i> 
+            <span class="font-bold text-lg tracking-wide">Let's Chat</span>
+        </a>
 
-        <section class="bg-td-secondary/10 pt-16 pb-20 border-b-4 border-td-primary text-center">
-            <div class="max-w-5xl mx-auto px-4">
-                <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
-                    Hire a world-class virtual assistant in <span class="text-td-primary">3 simple steps.</span>
-                </h1>
-                <p class="text-xl text-gray-600 mb-8">Save time, scale smarter, and focus on what matters.</p>
-                
-                <div class="grid md:grid-cols-3 gap-8 mt-12 text-left">
-                    <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-td-primary">
-                        <div class="text-4xl font-bold text-td-primary/20 mb-2">01</div>
-                        <h3 class="font-bold text-lg mb-2">Tell us your business needs</h3>
-                        <p class="text-sm text-gray-600">In a short introduction meeting, we’ll listen carefully to your requirements to ensure we match you with the right VA.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-td-orange">
-                        <div class="text-4xl font-bold text-td-orange/20 mb-2">02</div>
-                        <h3 class="font-bold text-lg mb-2">Meet and confirm your VA</h3>
-                        <p class="text-sm text-gray-600">Evaluate and interview our recommended profile matches, confirming your VA only if you are satisfied.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-td-pink">
-                        <div class="text-4xl font-bold text-td-pink/20 mb-2">03</div>
-                        <h3 class="font-bold text-lg mb-2">Start working together</h3>
-                        <p class="text-sm text-gray-600">Begin onboarding. Your VA will integrate into your team and help you achieve your business goals!</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <section class="bg-td-secondary/10 pt-16 pb-20 border-b-4 border-td-primary text-center">
+            <div class="max-w-5xl mx-auto px-4">
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
+                    Hire a world-class virtual assistant in <span class="text-td-primary">3 simple steps.</span>
+                </h1>
+                <p class="text-xl text-gray-600 mb-8">Save time, scale smarter, and focus on what matters.</p>
+                
+                <div class="grid md:grid-cols-3 gap-8 mt-12 text-left">
+                    <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-td-primary">
+                        <div class="text-4xl font-bold text-td-primary/20 mb-2">01</div>
+                        <h3 class="font-bold text-lg mb-2">Tell us your business needs</h3>
+                        <p class="text-sm text-gray-600">In a short introduction meeting, we’ll listen carefully to your requirements to ensure we match you with the right VA.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-td-orange">
+                        <div class="text-4xl font-bold text-td-orange/20 mb-2">02</div>
+                        <h3 class="font-bold text-lg mb-2">Meet and confirm your VA</h3>
+                        <p class="text-sm text-gray-600">Evaluate and interview our recommended profile matches, confirming your VA only if you are satisfied.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-td-pink">
+                        <div class="text-4xl font-bold text-td-pink/20 mb-2">03</div>
+                        <h3 class="font-bold text-lg mb-2">Start working together</h3>
+                        <p class="text-sm text-gray-600">Begin onboarding. Your VA will integrate into your team and help you achieve your business goals!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <section class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex items-center mb-10">
-                    <div class="bg-td-primary text-white font-bold rounded-full w-12 h-12 flex items-center justify-center text-xl mr-4 shrink-0">1</div>
-                    <div>
-                        <h2 class="text-3xl font-extrabold text-gray-900">Step 1: Tell Us Your Needs</h2>
-                        <p class="text-gray-500">Answer a few quick questions about your business and we'll handle the rest.</p>
-                    </div>
-                </div>
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center mb-10">
+                    <div class="bg-td-primary text-white font-bold rounded-full w-12 h-12 flex items-center justify-center text-xl mr-4 shrink-0">1</div>
+                    <div>
+                        <h2 class="text-3xl font-extrabold text-gray-900">Step 1: Tell Us Your Needs</h2>
+                        <p class="text-gray-500">Answer a few quick questions about your business and we'll handle the rest.</p>
+                    </div>
+                </div>
 
-                <div class="grid md:grid-cols-3 gap-8 mb-16">
-                    <div class="process-card bg-gray-50 p-6 rounded-xl border border-gray-100">
-                        <div class="bg-td-primary/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                            <i data-lucide="briefcase" class="text-td-primary w-6 h-6"></i>
-                        </div>
-                        <h3 class="font-bold text-lg mb-4">Business Type</h3>
-                        <ul class="space-y-3">
-                            <li class="flex items-center text-gray-700 text-sm"><i data-lucide="help-circle" class="w-4 h-4 text-td-primary mr-2"></i> What industry are you in?</li>
-                            <li class="flex items-center text-gray-700 text-sm"><i data-lucide="help-circle" class="w-4 h-4 text-td-primary mr-2"></i> What's your company size?</li>
-                            <li class="flex items-center text-gray-700 text-sm"><i data-lucide="help-circle" class="w-4 h-4 text-td-primary mr-2"></i> Solopreneur or team?</li>
-                        </ul>
-                    </div>
+                <div class="grid md:grid-cols-3 gap-8 mb-16">
+                    <div class="process-card bg-gray-50 p-6 rounded-xl border border-gray-100">
+                        <div class="bg-td-primary/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="briefcase" class="text-td-primary w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-4">Business Type</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center text-gray-700 text-sm"><i data-lucide="help-circle" class="w-4 h-4 text-td-primary mr-2"></i> What industry are you in?</li>
+                            <li class="flex items-center text-gray-700 text-sm"><i data-lucide="help-circle" class="w-4 h-4 text-td-primary mr-2"></i> What's your company size?</li>
+                            <li class="flex items-center text-gray-700 text-sm"><i data-lucide="help-circle" class="w-4 h-4 text-td-primary mr-2"></i> Solopreneur or team?</li>
+                        </ul>
+                    </div>
 
-                    <div class="process-card bg-gray-50 p-6 rounded-xl border border-gray-100">
-                        <div class="bg-td-orange/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                            <i data-lucide="list-todo" class="text-td-orange w-6 h-6"></i>
-                        </div>
-                        <h3 class="font-bold text-lg mb-4">Task Requirements</h3>
-                        <ul class="space-y-3">
-                            <li class="flex items-center text-gray-700 text-sm"><i data-lucide="help-circle" class="w-4 h-4 text-td-orange mr-2"></i> Which tasks take most time?</li>
-                            <li class="flex items-center text-gray-700 text-sm"><i data-lucide="help-circle" class="w-4 h-4 text-td-orange mr-2"></i> What's your biggest pain point?</li>
-                            <li class="flex items-center text-gray-700 text-sm"><i data-lucide="help-circle" class="w-4 h-4 text-td-orange mr-2"></i> Hours per week needed?</li>
-                        </ul>
-                    </div>
+                    <div class="process-card bg-gray-50 p-6 rounded-xl border border-gray-100">
+                        <div class="bg-td-orange/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="list-todo" class="text-td-orange w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-4">Task Requirements</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center text-gray-700 text-sm"><i data-lucide="help-circle" class="w-4 h-4 text-td-orange mr-2"></i> Which tasks take most time?</li>
+                            <li class="flex items-center text-gray-700 text-sm"><i data-lucide="help-circle" class="w-4 h-4 text-td-orange mr-2"></i> What's your biggest pain point?</li>
+                            <li class="flex items-center text-gray-700 text-sm"><i data-lucide="help-circle" class="w-4 h-4 text-td-orange mr-2"></i> Hours per week needed?</li>
+                        </ul>
+                    </div>
 
-                    <div class="process-card bg-gray-50 p-6 rounded-xl border border-gray-100">
-                        <div class="bg-td-pink/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                            <i data-lucide="message-square" class="text-td-pink w-6 h-6"></i>
-                        </div>
-                        <h3 class="font-bold text-lg mb-4">Work Style</h3>
-                        <ul class="space-y-3">
-                            <li class="flex items-center text-gray-700 text-sm"><i data-lucide="help-circle" class="w-4 h-4 text-td-pink mr-2"></i> Communication style?</li>
-                            <li class="flex items-center text-gray-700 text-sm"><i data-lucide="help-circle" class="w-4 h-4 text-td-pink mr-2"></i> Your time zone?</li>
-                            <li class="flex items-center text-gray-700 text-sm"><i data-lucide="help-circle" class="w-4 h-4 text-td-pink mr-2"></i> Real-time collaboration?</li>
-                        </ul>
-                    </div>
-                </div>
+                    <div class="process-card bg-gray-50 p-6 rounded-xl border border-gray-100">
+                        <div class="bg-td-pink/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="message-square" class="text-td-pink w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-4">Work Style</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center text-gray-700 text-sm"><i data-lucide="help-circle" class="w-4 h-4 text-td-pink mr-2"></i> Communication style?</li>
+                            <li class="flex items-center text-gray-700 text-sm"><i data-lucide="help-circle" class="w-4 h-4 text-td-pink mr-2"></i> Your time zone?</li>
+                            <li class="flex items-center text-gray-700 text-sm"><i data-lucide="help-circle" class="w-4 h-4 text-td-pink mr-2"></i> Real-time collaboration?</li>
+                        </ul>
+                    </div>
+                </div>
 
-                <div class="bg-td-secondary/5 rounded-2xl p-8 border border-td-secondary/20">
-                    <h3 class="text-2xl font-bold text-center mb-8">What Tasks Can We Help With?</h3>
-                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
-                            <i data-lucide="mail" class="text-td-primary w-8 h-8 mr-4"></i>
-                            <div>
-                                <p class="font-bold text-gray-900">Email Management</p>
-                                <p class="text-xs text-green-600 font-semibold">Save 2-4 hours/day</p>
-                            </div>
-                        </div>
-                        <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
-                            <i data-lucide="calendar" class="text-td-orange w-8 h-8 mr-4"></i>
-                            <div>
-                                <p class="font-bold text-gray-900">Calendar Scheduling</p>
-                                <p class="text-xs text-green-600 font-semibold">Save 1-2 hours/day</p>
-                            </div>
-                        </div>
-                        <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
-                            <i data-lucide="database" class="text-td-pink w-8 h-8 mr-4"></i>
-                            <div>
-                                <p class="font-bold text-gray-900">Data Entry</p>
-                                <p class="text-xs text-green-600 font-semibold">Save 3-5 hours/day</p>
-                            </div>
-                        </div>
-                        <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
-                            <i data-lucide="headphones" class="text-td-secondary w-8 h-8 mr-4"></i>
-                            <div>
-                                <p class="font-bold text-gray-900">Customer Support</p>
-                                <p class="text-xs text-green-600 font-semibold">Save 4-6 hours/day</p>
-                            </div>
-                        </div>
-                        <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
-                            <i data-lucide="instagram" class="text-purple-500 w-8 h-8 mr-4"></i>
-                            <div>
-                                <p class="font-bold text-gray-900">Social Media</p>
-                                <p class="text-xs text-green-600 font-semibold">Save 2-3 hours/day</p>
-                            </div>
-                        </div>
-                        <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
-                            <i data-lucide="search" class="text-gray-500 w-8 h-8 mr-4"></i>
-                            <div>
-                                <p class="font-bold text-gray-900">Research</p>
-                                <p class="text-xs text-green-600 font-semibold">Save 3-4 hours/day</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text-center mt-10">
-                        <p class="text-lg font-medium text-gray-700 mb-4">Discover what Twindesk can do for you and your business</p>
-                        <a href="https://calendly.com/info-twindesk/30min" target="_blank" class="inline-block bg-td-primary text-white px-8 py-3 rounded-full font-bold shadow-lg hover:bg-td-secondary hover:-translate-y-1 transition duration-300">
-                            Schedule Call
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
+                <div class="bg-td-secondary/5 rounded-2xl p-8 border border-td-secondary/20">
+                    <h3 class="text-2xl font-bold text-center mb-8">What Tasks Can We Help With?</h3>
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                            <i data-lucide="mail" class="text-td-primary w-8 h-8 mr-4"></i>
+                            <div>
+                                <p class="font-bold text-gray-900">Email Management</p>
+                                <p class="text-xs text-green-600 font-semibold">Save 2-4 hours/day</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                            <i data-lucide="calendar" class="text-td-orange w-8 h-8 mr-4"></i>
+                            <div>
+                                <p class="font-bold text-gray-900">Calendar Scheduling</p>
+                                <p class="text-xs text-green-600 font-semibold">Save 1-2 hours/day</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                            <i data-lucide="database" class="text-td-pink w-8 h-8 mr-4"></i>
+                            <div>
+                                <p class="font-bold text-gray-900">Data Entry</p>
+                                <p class="text-xs text-green-600 font-semibold">Save 3-5 hours/day</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                            <i data-lucide="headphones" class="text-td-secondary w-8 h-8 mr-4"></i>
+                            <div>
+                                <p class="font-bold text-gray-900">Customer Support</p>
+                                <p class="text-xs text-green-600 font-semibold">Save 4-6 hours/day</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                            <i data-lucide="instagram" class="text-purple-500 w-8 h-8 mr-4"></i>
+                            <div>
+                                <p class="font-bold text-gray-900">Social Media</p>
+                                <p class="text-xs text-green-600 font-semibold">Save 2-3 hours/day</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                            <i data-lucide="search" class="text-gray-500 w-8 h-8 mr-4"></i>
+                            <div>
+                                <p class="font-bold text-gray-900">Research</p>
+                                <p class="text-xs text-green-600 font-semibold">Save 3-4 hours/day</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-10">
+                        <p class="text-lg font-medium text-gray-700 mb-4">Discover what Twindesk can do for you and your business</p>
+                        <a href="https://calendly.com/info-twindesk/30min" target="_blank" class="inline-block bg-td-primary text-white px-8 py-3 rounded-full font-bold shadow-lg hover:bg-td-secondary hover:-translate-y-1 transition duration-300">
+                            Schedule Call
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <section class="py-20 bg-gray-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex items-center mb-10">
-                    <div class="bg-td-orange text-white font-bold rounded-full w-12 h-12 flex items-center justify-center text-xl mr-4 shrink-0">2</div>
-                    <div>
-                        <h2 class="text-3xl font-extrabold text-gray-900">Step 2: Meet Your Match</h2>
-                        <p class="text-gray-500">Within 3-5 days, we'll introduce you to your hand-picked virtual assistant.</p>
-                    </div>
-                </div>
+        <section class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center mb-10">
+                    <div class="bg-td-orange text-white font-bold rounded-full w-12 h-12 flex items-center justify-center text-xl mr-4 shrink-0">2</div>
+                    <div>
+                        <h2 class="text-3xl font-extrabold text-gray-900">Step 2: Meet Your Match</h2>
+                        <p class="text-gray-500">Within 3-5 days, we'll introduce you to your hand-picked virtual assistant.</p>
+                    </div>
+                </div>
 
-                <div class="grid lg:grid-cols-2 gap-12">
-                    <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-td-primary">
-                        <h3 class="text-xl font-bold text-gray-900 mb-6 flex items-center">
-                            <i data-lucide="user-check" class="mr-2 text-td-primary"></i> Our Matching Process
-                        </h3>
-                        <div class="space-y-6 relative border-l-2 border-gray-100 ml-3 pl-8">
-                            <div class="relative">
-                                <span class="absolute -left-[41px] top-0 bg-td-primary text-white w-6 h-6 rounded-full flex items-center justify-center text-xs">1</span>
-                                <h4 class="font-bold text-gray-900">Analysis</h4>
-                                <p class="text-sm text-gray-600">We analyze your requirements and preferences.</p>
-                            </div>
-                            <div class="relative">
-                                <span class="absolute -left-[41px] top-0 bg-td-primary text-white w-6 h-6 rounded-full flex items-center justify-center text-xs">2</span>
-                                <h4 class="font-bold text-gray-900">Talent Pool Search</h4>
-                                <p class="text-sm text-gray-600">We search our pre-vetted pool of 1,000+ VAs.</p>
-                            </div>
-                            <div class="relative">
-                                <span class="absolute -left-[41px] top-0 bg-td-primary text-white w-6 h-6 rounded-full flex items-center justify-center text-xs">3</span>
-                                <h4 class="font-bold text-gray-900">Work Style</h4>
-                                <p class="text-sm text-gray-600">We match specific skills to your needs.</p>
-                            </div>
-                            <div class="relative">
-                                <span class="absolute -left-[41px] top-0 bg-td-primary text-white w-6 h-6 rounded-full flex items-center justify-center text-xs">4</span>
-                                <h4 class="font-bold text-gray-900">Final Selection</h4>
-                                <p class="text-sm text-gray-600">Our team reviews and selects your perfect match.</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-td-primary">
+                        <h3 class="text-xl font-bold text-gray-900 mb-6 flex items-center">
+                            <i data-lucide="user-check" class="mr-2 text-td-primary"></i> Our Matching Process
+                        </h3>
+                        <div class="space-y-6 relative border-l-2 border-gray-100 ml-3 pl-8">
+                            <div class="relative">
+                                <span class="absolute -left-[41px] top-0 bg-td-primary text-white w-6 h-6 rounded-full flex items-center justify-center text-xs">1</span>
+                                <h4 class="font-bold text-gray-900">Analysis</h4>
+                                <p class="text-sm text-gray-600">We analyze your requirements and preferences.</p>
+                            </div>
+                            <div class="relative">
+                                <span class="absolute -left-[41px] top-0 bg-td-primary text-white w-6 h-6 rounded-full flex items-center justify-center text-xs">2</span>
+                                <h4 class="font-bold text-gray-900">Talent Pool Search</h4>
+                                <p class="text-sm text-gray-600">We search our pre-vetted pool of 1,000+ VAs.</p>
+                            </div>
+                            <div class="relative">
+                                <span class="absolute -left-[41px] top-0 bg-td-primary text-white w-6 h-6 rounded-full flex items-center justify-center text-xs">3</span>
+                                <h4 class="font-bold text-gray-900">Work Style</h4>
+                                <p class="text-sm text-gray-600">We match specific skills to your needs.</p>
+                            </div>
+                            <div class="relative">
+                                <span class="absolute -left-[41px] top-0 bg-td-primary text-white w-6 h-6 rounded-full flex items-center justify-center text-xs">4</span>
+                                <h4 class="font-bold text-gray-900">Final Selection</h4>
+                                <p class="text-sm text-gray-600">Our team reviews and selects your perfect match.</p>
+                            </div>
+                        </div>
+                    </div>
 
-                    <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-td-orange">
-                        <h3 class="text-xl font-bold text-gray-900 mb-6 flex items-center">
-                            <i data-lucide="shield-check" class="mr-2 text-td-orange"></i> Vetting Process
-                        </h3>
-                        <div class="space-y-4">
-                            <div class="flex items-start">
-                                <i data-lucide="video" class="w-5 h-5 text-gray-400 mt-1 mr-3"></i>
-                                <div>
-                                    <h4 class="font-bold text-gray-800">Initial Interview & Video Intro</h4>
-                                    <p class="text-sm text-gray-600">We assess personality and communication style early on.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <i data-lucide="languages" class="w-5 h-5 text-gray-400 mt-1 mr-3"></i>
-                                <div>
-                                    <h4 class="font-bold text-gray-800">Advanced English Assessment</h4>
-                                    <p class="text-sm text-gray-600">Ensuring near-native communication capabilities.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <i data-lucide="user" class="w-5 h-5 text-gray-400 mt-1 mr-3"></i>
-                                <div>
-                                    <h4 class="font-bold text-gray-800">Final Interview</h4>
-                                    <p class="text-sm text-gray-600">A deep dive into specific skills and experience.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-gray-400 mt-1 mr-3"></i>
-                                <div>
-                                    <h4 class="font-bold text-gray-800">Background & Reference Check</h4>
-                                    <p class="text-sm text-gray-600">Verifying work history for your peace of mind.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                    <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-td-orange">
+                        <h3 class="text-xl font-bold text-gray-900 mb-6 flex items-center">
+                            <i data-lucide="shield-check" class="mr-2 text-td-orange"></i> Vetting Process
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i data-lucide="video" class="w-5 h-5 text-gray-400 mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Initial Interview & Video Intro</h4>
+                                    <p class="text-sm text-gray-600">We assess personality and communication style early on.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i data-lucide="languages" class="w-5 h-5 text-gray-400 mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Advanced English Assessment</h4>
+                                    <p class="text-sm text-gray-600">Ensuring near-native communication capabilities.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i data-lucide="user" class="w-5 h-5 text-gray-400 mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Final Interview</h4>
+                                    <p class="text-sm text-gray-600">A deep dive into specific skills and experience.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-gray-400 mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Background & Reference Check</h4>
+                                    <p class="text-sm text-gray-600">Verifying work history for your peace of mind.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <section class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex items-center mb-10">
-                    <div class="bg-td-pink text-white font-bold rounded-full w-12 h-12 flex items-center justify-center text-xl mr-4 shrink-0">3</div>
-                    <div>
-                        <h2 class="text-3xl font-extrabold text-gray-900">Step 3: Start Growing</h2>
-                        <p class="text-gray-500">Your virtual assistant is ready to start. Within 24 hours of matching, you'll begin your onboarding process.</p>
-                    </div>
-                </div>
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center mb-10">
+                    <div class="bg-td-pink text-white font-bold rounded-full w-12 h-12 flex items-center justify-center text-xl mr-4 shrink-0">3</div>
+                    <div>
+                        <h2 class="text-3xl font-extrabold text-gray-900">Step 3: Start Growing</h2>
+                        <p class="text-gray-500">Your virtual assistant is ready to start. Within 24 hours of matching, you'll begin your onboarding process.</p>
+                    </div>
+                </div>
 
-                <div class="bg-gradient-to-r from-td-secondary/10 to-td-pink/10 rounded-2xl p-10 text-center border border-gray-100">
-                    <i data-lucide="rocket" class="w-16 h-16 text-td-pink mx-auto mb-6"></i>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Seamless Onboarding Process</h3>
-                    <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
-                        We make it easy to get started. We'll guide you through the integration so you hit the ground running immediately and start reclaiming your valuable time.
-                    </p>
-                    <a href="https://calendly.com/info-twindesk/30min" target="_blank" class="inline-block bg-td-pink text-white px-10 py-4 rounded-xl font-bold shadow-xl hover:bg-td-orange transition duration-300 transform hover:scale-105">
-                        Start Now
-                    </a>
-                </div>
-            </div>
-        </section>
+                <div class="bg-gradient-to-r from-td-secondary/10 to-td-pink/10 rounded-2xl p-10 text-center border border-gray-100">
+                    <i data-lucide="rocket" class="w-16 h-16 text-td-pink mx-auto mb-6"></i>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Seamless Onboarding Process</h3>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+                        We make it easy to get started. We'll guide you through the integration so you hit the ground running immediately and start reclaiming your valuable time.
+                    </p>
+                    <a href="https://calendly.com/info-twindesk/30min" target="_blank" class="inline-block bg-td-pink text-white px-10 py-4 rounded-xl font-bold shadow-xl hover:bg-td-orange transition duration-300 transform hover:scale-105">
+                        Start Now
+                    </a>
+                </div>
+            </div>
+        </section>
 
-    </main>
+    </main>
 
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
-            <div class="mb-4 md:mb-0">
-                 <img src="https://live.staticflickr.com/65535/54901201395_a052e1f973_b.jpg" alt="TwinDesk Logo" class="h-12 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition duration-300"/>
-            </div>
-            <nav class="flex flex-wrap justify-center gap-6 mb-4 md:mb-0">
-                <a href="index.html" class="text-gray-400 hover:text-white transition duration-300">Home</a>
-                <a href="our-virtual-assistants.html" class="text-gray-400 hover:text-white transition duration-300">Our Virtual Assistants</a>
-                <a href="va-matching-process.html" class="text-white font-semibold transition duration-300">VA Matching Process</a>
-                <a href="index.html#pricing" class="text-gray-400 hover:text-white transition duration-300">Pricing</a>
-                <a href="index.html#team" class="text-gray-400 hover:text-white transition duration-300">Team</a>
-                <a href="index.html#faq" class="text-gray-400 hover:text-white transition duration-300">FAQ</a>
-            </nav>
-            <div class="text-gray-400 text-sm">
-                &copy; 2024 TwinDesk. All rights reserved.
-            </div>
-        </div>
-    </footer>
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                 <img src="https://live.staticflickr.com/65535/54901201395_a052e1f973_b.jpg" alt="TwinDesk Logo" class="h-12 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition duration-300"/>
+            </div>
+            <nav class="flex flex-wrap justify-center gap-6 mb-4 md:mb-0">
+                <a href="index.html" class="text-gray-400 hover:text-white transition duration-300">Home</a>
+                <a href="our-virtual-assistants.html" class="text-gray-400 hover:text-white transition duration-300">Our Virtual Assistants</a>
+                <a href="va-matching-process.html" class="text-white font-semibold transition duration-300">VA Matching Process</a>
+                <a href="index.html#team" class="text-gray-400 hover:text-white transition duration-300">Team</a>
+                <a href="index.html#faq" class="text-gray-400 hover:text-white transition duration-300">FAQ</a>
+            </nav>
+            <div class="text-gray-400 text-sm">
+                &copy; 2024 TwinDesk. All rights reserved.
+            </div>
+        </div>
+    </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            lucide.createIcons();
-        });
-    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+    </script>
 </body>
 </html>
