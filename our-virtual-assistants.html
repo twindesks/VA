@@ -74,6 +74,11 @@
             padding-top: 2rem;
             margin-top: 2rem;
         }
+        /* Style for the Calendly widget itself */
+        .calendly-inline-widget {
+             /* Reduced height for "mini" look */
+            height: 550px !important; 
+        }
     </style>
 </head>
 
@@ -88,7 +93,6 @@
                 <a href="index.html" class="text-gray-600 hover:text-td-primary font-medium transition duration-300">Home</a>
                 <a href="our-virtual-assistants.html" class="text-td-primary font-bold transition duration-300">VA Assessment</a>
                 <a href="va-matching-process.html" class="text-gray-600 hover:text-td-primary font-medium transition duration-300">VA Matching Process</a>
-                <a href="index.html#pricing" class="text-gray-600 hover:text-td-primary font-medium transition duration-300">Pricing</a>
                 <a href="index.html#team" class="text-gray-600 hover:text-td-primary font-medium transition duration-300">Team</a>
                 <a href="index.html#faq" class="text-gray-600 hover:text-td-primary font-medium transition duration-300">FAQ</a>
             </nav>
@@ -178,6 +182,22 @@
                                 <input type="checkbox" data-hours="8" data-category="Customer Service" name="task[]" value="Customer Service: Outbound calls/appointment setting" class="task-checkbox">
                                 <span class="text-gray-700 text-base">Outbound calls/appointment setting</span>
                             </label>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="4" data-category="Customer Service" name="task[]" value="Customer Service: Process warranty/refund requests" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Process warranty/refund requests</span>
+                            </label>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="5" data-category="Customer Service" name="task[]" value="Customer Service: Conduct customer satisfaction surveys/follow-up" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Conduct customer satisfaction surveys/follow-up</span>
+                            </label>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="6" data-category="Customer Service" name="task[]" value="Customer Service: Perform outbound calls for service reviews" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Perform outbound calls for service reviews</span>
+                            </label>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="7" data-category="Customer Service" name="task[]" value="Customer Service: Manage and update help center/knowledge base articles" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Manage and update help center/knowledge base articles</span>
+                            </label>
                             
                             <h3 class="task-category-heading text-xl">Design & Branding</h3>
                             <label class="task-item">
@@ -235,6 +255,22 @@
                             <label class="task-item">
                                 <input type="checkbox" data-hours="5" data-category="Executive" name="task[]" value="Executive: Handle confidential info & provide proactive support" class="task-checkbox">
                                 <span class="text-gray-700 text-base">Handle confidential info & provide proactive support</span>
+                            </label>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="10" data-category="Executive" name="task[]" value="Executive: Prepare quarterly/monthly performance reports and presentations" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Prepare quarterly/monthly performance reports and presentations</span>
+                            </label>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="12" data-category="Executive" name="task[]" value="Executive: Manage and track executive-level projects/OKRs" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Manage and track executive-level projects/OKRs</span>
+                            </label>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="6" data-category="Executive" name="task[]" value="Executive: Coordinate complex travel arrangements and itineraries" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Coordinate complex travel arrangements and itineraries</span>
+                            </label>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="4" data-category="Executive" name="task[]" value="Executive: Filter, prioritize, and manage CEO/Executive social media inbox" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Filter, prioritize, and manage CEO/Executive social media inbox</span>
                             </label>
                             
                             <h3 class="task-category-heading text-xl">E-commerce Management</h3>
@@ -320,9 +356,9 @@
                             </div>
                             
                             <div id="calendar-embed-container">
-                                <h3 class="text-xl font-extrabold text-gray-900 mb-4 text-center">...or, book a call now (30 Min)</h3>
+                                <h3 class="text-xl font-extrabold text-gray-900 mb-4 text-center">Book Your 30-Min Consultation (Monday-Saturday, 9 PM - 5 AM Manila Time)</h3>
                                 
-                                <div class="calendly-inline-widget" data-url="https://calendly.com/info-twindesk/30min?month=2025-11" style="min-width:320px;height:700px;"></div>
+                                <div class="calendly-inline-widget" data-url="https://calendly.com/info-twindesk/30min?month=2025-11&hide_event_type_details=1&hide_landing_page_details=1" style="min-width:320px;height:550px;"></div>
                                 
                             </div>
                             </div>
@@ -331,8 +367,8 @@
 
             </form>
         </section>
-
-        </main>
+        
+    </main>
 
     <footer class="bg-gray-800 text-white py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
@@ -341,7 +377,6 @@
                 <a href="index.html" class="text-gray-400 hover:text-white transition duration-300">Home</a>
                 <a href="our-virtual-assistants.html" class="text-white font-semibold transition duration-300">VA Assessment</a>
                 <a href="va-matching-process.html" class="text-gray-400 hover:text-white transition duration-300">VA Matching Process</a>
-                <a href="index.html#pricing" class="text-gray-400 hover:text-white transition duration-300">Pricing</a>
                 <a href="index.html#team" class="text-gray-400 hover:text-white transition duration-300">Team</a>
                 <a href="index.html#faq" class="text-gray-400 hover:text-white transition duration-300">FAQ</a>
             </nav>
@@ -353,7 +388,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             lucide.createIcons();
 
-            // Mappings (Unchanged from previous version, kept for completeness)
+            // Mappings 
             const vaTypeMapping = {
                 'Admin': 'Administrative Assistant',
                 'Bookkeeping': 'Bookkeeper / AR Specialist', 
@@ -363,6 +398,7 @@
                 'Executive': 'Executive Assistant (EA)',
                 'E-commerce': 'E-commerce Specialist',
                 'WebDev': 'Web Developer',
+                'General Tasks': 'General/Mixed Assistant' // Added General/Mixed for clarity
             };
             
             const vaColorMapping = {
@@ -374,7 +410,7 @@
                 'Executive Assistant (EA)': 'text-td-primary',
                 'E-commerce Specialist': 'text-td-pink',
                 'Web Developer': 'text-td-secondary',
-                'General Tasks': 'text-gray-400',
+                'General/Mixed Assistant': 'text-gray-400',
             };
 
             const form = document.getElementById('va-assessment-form');
@@ -406,6 +442,7 @@
 
                 let commitment = 'N/A';
                 vaCommitmentEl.classList.remove(colorClasses);
+                vaCommitmentEl.classList.remove('text-td-primary', 'text-td-secondary', 'text-gray-400'); // Ensure removal of specific colors
 
                 if (totalHours >= 30) {
                     commitment = 'Full-Time VA';
@@ -432,26 +469,27 @@
                     }
                 }
                 
-                const vaTypeDisplayName = vaTypeMapping[topCategoryKey] || 'General Tasks';
+                const vaTypeDisplayName = vaTypeMapping[topCategoryKey] || 'General/Mixed Assistant';
                 vaTypeEl.textContent = vaTypeDisplayName;
 
                 vaTypeEl.classList.remove(colorClasses);
+                vaTypeEl.classList.remove('text-td-primary', 'text-td-secondary', 'text-td-pink', 'text-td-orange', 'text-gray-400'); // Ensure removal of specific colors
+
                 const typeColor = vaColorMapping[vaTypeDisplayName] || 'text-gray-400';
                 vaTypeEl.classList.add(typeColor);
                 
                 // --- 3. Prepare Hidden Form Summary ---
-                // This prepares a clean summary string for Formspree submission
                 const checkedTasks = Array.from(checkboxes)
                     .filter(c => c.checked)
                     .map(c => {
                         let taskName = c.value;
                         const hours = c.getAttribute('data-hours');
                         
-                        // If it's the "Other" task, append the details input value
-                        if (c.id === 'other-task-checkbox' && otherTaskInput.value) {
-                            taskName = `Admin: Other Tasks (Details: ${otherTaskInput.value})`;
+                        if (c.id === 'other-task-checkbox' && c.checked) {
+                            const details = otherTaskInput.value ? otherTaskInput.value : 'No details specified';
+                            taskName = `Admin: Other Tasks (Details: ${details})`;
                         }
-                        return `${taskName} [${hours} hrs]`;
+                        return `${taskName.split(': ')[1] || taskName} [${hours} hrs]`;
                     }).join(' | ');
 
                 const summaryReport = `Recommendation: ${vaTypeDisplayName}, Commitment: ${commitment}, Total Hours: ${totalHours}. Checked Tasks: [${checkedTasks}]`;
@@ -467,11 +505,10 @@
             // Listen to changes in the "Other Tasks" text input as well
             if (otherTaskInput) {
                 otherTaskInput.addEventListener('input', updateRecommendation);
-                // Also listen for change on the checkbox next to the input
                 document.getElementById('other-task-checkbox').addEventListener('change', updateRecommendation);
             }
 
-            // Final check on load
+            // Initial check on load
             updateRecommendation();
         });
     </script>
