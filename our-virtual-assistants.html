@@ -9,6 +9,9 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    
     <script>
         tailwind.config = {
             theme: {
@@ -27,7 +30,7 @@
         body { font-family: 'Inter', sans-serif; background-color: #f7f9fb; }
         .task-item {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             cursor: pointer;
             padding: 10px 0;
             transition: background-color 0.2s;
@@ -41,20 +44,35 @@
         }
         .task-item input[type="checkbox"] {
             margin-right: 12px;
-            min-width: 1.25rem; /* Ensure checkbox is visible */
+            min-width: 1.25rem;
             min-height: 1.25rem;
             accent-color: var(--td-primary);
+            margin-top: 3px;
         }
         .task-category-heading {
-            font-weight: 800; /* Extra bold */
-            color: #1f2937; /* Dark gray */
+            font-weight: 800;
+            color: #1f2937;
             margin-top: 2rem;
             margin-bottom: 0.5rem;
-            border-left: 5px solid #faaf20; /* td-orange */
+            border-left: 5px solid #faaf20;
             padding-left: 10px;
         }
         .task-category-heading:first-child {
             margin-top: 0;
+        }
+        .other-task-input {
+            margin-left: 8px; 
+            padding: 4px 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 80%;
+            font-size: 0.875rem;
+        }
+        /* Custom styles for embedded calendar section */
+        #calendar-embed-container {
+            border-top: 1px solid #ddd;
+            padding-top: 2rem;
+            margin-top: 2rem;
         }
     </style>
 </head>
@@ -92,7 +110,7 @@
         </section>
 
         <section class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <form id="va-assessment-form" action="https://formspree.io/f/xnnokzez" method="POST" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid lg:grid-cols-2 gap-10">
                     
                     <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 lg:col-span-1">
@@ -101,129 +119,173 @@
                             
                             <h3 class="task-category-heading text-xl">General Administrative & Operations</h3>
                             <label class="task-item">
-                                <input type="checkbox" data-hours="5" data-category="Admin" class="task-checkbox">
-                                <span class="text-gray-700 text-base">Organize & respond to emails, flagging important messages (5 hrs/wk)</span>
+                                <input type="checkbox" data-hours="5" data-category="Admin" name="task[]" value="Admin: Organize & respond to emails" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Organize & respond to emails, flagging important messages</span>
                             </label>
                             <label class="task-item">
-                                <input type="checkbox" data-hours="10" data-category="Admin" class="task-checkbox">
-                                <span class="text-gray-700 text-base">Schedule appointments, meetings, and reminders (10 hrs/wk)</span>
+                                <input type="checkbox" data-hours="10" data-category="Admin" name="task[]" value="Admin: Schedule appointments, meetings, and reminders" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Schedule appointments, meetings, and reminders</span>
                             </label>
                             <label class="task-item">
-                                <input type="checkbox" data-hours="4" data-category="Admin" class="task-checkbox">
-                                <span class="text-gray-700 text-base">Data entry & maintain digital filing systems (4 hrs/wk)</span>
+                                <input type="checkbox" data-hours="4" data-category="Admin" name="task[]" value="Admin: Data entry & maintain digital filing systems" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Data entry & maintain digital filing systems</span>
                             </label>
                             <label class="task-item">
-                                <input type="checkbox" data-hours="6" data-category="Admin" class="task-checkbox">
-                                <span class="text-gray-700 text-base">Track payments, process invoices, and manage receipts (6 hrs/wk)</span>
+                                <input type="checkbox" data-hours="6" data-category="Admin" name="task[]" value="Admin: Track payments, process invoices, and manage receipts" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Track payments, process invoices, and manage receipts</span>
                             </label>
                             <label class="task-item">
-                                <input type="checkbox" data-hours="7" data-category="Admin" class="task-checkbox">
-                                <span class="text-gray-700 text-base">Help with creating SOPs, guides, or checklists (7 hrs/wk)</span>
+                                <input type="checkbox" data-hours="7" data-category="Admin" name="task[]" value="Admin: Help with creating SOPs, guides, or checklists" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Help with creating SOPs, guides, or checklists</span>
                             </label>
                             <label class="task-item">
-                                <input type="checkbox" data-hours="5" data-category="Admin" class="task-checkbox">
-                                <span class="text-gray-700 text-base">Perform light research and assist with online tasks (5 hrs/wk)</span>
+                                <input type="checkbox" data-hours="5" data-category="Admin" name="task[]" value="Admin: Perform light research and assist with online tasks" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Perform light research and assist with online tasks</span>
                             </label>
 
                             <h3 class="task-category-heading text-xl">Bookkeeping & Accounts Receivable</h3>
                             <label class="task-item">
-                                <input type="checkbox" data-hours="10" data-category="Bookkeeping" class="task-checkbox">
-                                <span class="text-gray-700 text-base">Record daily AR transactions & reconcile customer payments (10 hrs/wk)</span>
+                                <input type="checkbox" data-hours="10" data-category="Bookkeeping" name="task[]" value="Bookkeeping: Record daily AR transactions & reconcile customer payments" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Record daily AR transactions & reconcile customer payments</span>
                             </label>
                             <label class="task-item">
-                                <input type="checkbox" data-hours="8" data-category="Bookkeeping" class="task-checkbox">
-                                <span class="text-gray-700 text-base">Prepare and send out invoices and account statements (8 hrs/wk)</span>
+                                <input type="checkbox" data-hours="8" data-category="Bookkeeping" name="task[]" value="Bookkeeping: Prepare and send out invoices and account statements" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Prepare and send out invoices and account statements</span>
                             </label>
                             <label class="task-item">
-                                <input type="checkbox" data-hours="7" data-category="Bookkeeping" class="task-checkbox">
-                                <span class="text-gray-700 text-base">Monitor aging reports and follow up on overdue accounts (7 hrs/wk)</span>
+                                <input type="checkbox" data-hours="7" data-category="Bookkeeping" name="task[]" value="Bookkeeping: Monitor aging reports and follow up on overdue accounts" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Monitor aging reports and follow up on overdue accounts</span>
                             </label>
                             <label class="task-item">
-                                <input type="checkbox" data-hours="5" data-category="Bookkeeping" class="task-checkbox">
-                                <span class="text-gray-700 text-base">Maintain accurate financial records in QuickBooks (5 hrs/wk)</span>
+                                <input type="checkbox" data-hours="5" data-category="Bookkeeping" name="task[]" value="Bookkeeping: Maintain accurate financial records in QuickBooks" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Maintain accurate financial records in QuickBooks</span>
                             </label>
                             <label class="task-item">
-                                <input type="checkbox" data-hours="5" data-category="Bookkeeping" class="task-checkbox">
-                                <span class="text-gray-700 text-base">Communicate with clients regarding billing inquiries (5 hrs/wk)</span>
+                                <input type="checkbox" data-hours="5" data-category="Bookkeeping" name="task[]" value="Bookkeeping: Communicate with clients regarding billing inquiries" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Communicate with clients regarding billing inquiries</span>
                             </label>
 
                             <h3 class="task-category-heading text-xl">Customer Service & Sales Support</h3>
                             <label class="task-item">
-                                <input type="checkbox" data-hours="15" data-category="Customer Service" class="task-checkbox">
-                                <span class="text-gray-700 text-base">Handle support tickets/live chat/client inquiries professionally (15 hrs/wk)</span>
+                                <input type="checkbox" data-hours="15" data-category="Customer Service" name="task[]" value="Customer Service: Handle support tickets/live chat/client inquiries professionally" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Handle support tickets/live chat/client inquiries professionally</span>
                             </label>
                             <label class="task-item">
-                                <input type="checkbox" data-hours="10" data-category="Customer Service" class="task-checkbox">
-                                <span class="text-gray-700 text-base">Follow up with leads and manage CRM data/updates (10 hrs/wk)</span>
+                                <input type="checkbox" data-hours="10" data-category="Customer Service" name="task[]" value="Customer Service: Follow up with leads and manage CRM data/updates" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Follow up with leads and manage CRM data/updates</span>
                             </label>
                             <label class="task-item">
-                                <input type="checkbox" data-hours="8" data-category="Customer Service" class="task-checkbox">
-                                <span class="text-gray-700 text-base">Outbound calls/appointment setting (8 hrs/wk)</span>
+                                <input type="checkbox" data-hours="8" data-category="Customer Service" name="task[]" value="Customer Service: Outbound calls/appointment setting" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Outbound calls/appointment setting</span>
+                            </label>
+                            
+                            <h3 class="task-category-heading text-xl">Design & Branding</h3>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="12" data-category="Design" name="task[]" value="Design: Create social media graphics, ads, and banners" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Create social media graphics, ads, and banners (Photoshop/Canva)</span>
+                            </label>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="15" data-category="Design" name="task[]" value="Design: Design/layout e-books, white papers, or detailed print materials" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Design/layout e-books, white papers, or detailed print materials</span>
+                            </label>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="8" data-category="Design" name="task[]" value="Design: Edit photos, product images, and perform light video editing" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Edit photos, product images, and perform light video editing</span>
+                            </label>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="5" data-category="Design" name="task[]" value="Design: Ensure all visual assets adhere to brand guidelines and standards" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Ensure all visual assets adhere to brand guidelines and standards</span>
                             </label>
 
                             <h3 class="task-category-heading text-xl">Marketing & Social Media</h3>
                             <label class="task-item">
-                                <input type="checkbox" data-hours="10" data-category="Marketing" class="task-checkbox">
-                                <span class="text-gray-700 text-base">Social media content scheduling & content calendar creation (10 hrs/wk)</span>
+                                <input type="checkbox" data-hours="10" data-category="Marketing" name="task[]" value="Marketing: Social media content scheduling & content calendar creation" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Social media content scheduling & content calendar creation</span>
                             </label>
                             <label class="task-item">
-                                <input type="checkbox" data-hours="8" data-category="Marketing" class="task-checkbox">
-                                <span class="text-gray-700 text-base">Email marketing support (drafts, scheduling, list management) (8 hrs/wk)</span>
+                                <input type="checkbox" data-hours="8" data-category="Marketing" name="task[]" value="Marketing: Email marketing support (drafts, scheduling, list management)" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Email marketing support (drafts, scheduling, list management)</span>
                             </label>
                             <label class="task-item">
-                                <input type="checkbox" data-hours="12" data-category="Marketing" class="task-checkbox">
-                                <span class="text-gray-700 text-base">Simple graphic/video creation (Canva, Filmora, etc.) (12 hrs/wk)</span>
+                                <input type="checkbox" data-hours="12" data-category="Marketing" name="task[]" value="Marketing: Simple graphic/video creation" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Simple graphic/video creation (Canva, Filmora, etc.)</span>
                             </label>
                             <label class="task-item">
-                                <input type="checkbox" data-hours="5" data-category="Marketing" class="task-checkbox">
-                                <span class="text-gray-700 text-base">Respond to comments, messages, and monitor brand conversations (5 hrs/wk)</span>
+                                <input type="checkbox" data-hours="5" data-category="Marketing" name="task[]" value="Marketing: Respond to comments, messages, and monitor brand conversations" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Respond to comments, messages, and monitor brand conversations</span>
                             </label>
                             <label class="task-item">
-                                <input type="checkbox" data-hours="4" data-category="Marketing" class="task-checkbox">
-                                <span class="text-gray-700 text-base">Track performance metrics (reach, engagement) & reporting (4 hrs/wk)</span>
+                                <input type="checkbox" data-hours="4" data-category="Marketing" name="task[]" value="Marketing: Track performance metrics & reporting" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Track performance metrics (reach, engagement) & reporting</span>
                             </label>
 
                             <h3 class="task-category-heading text-xl">Executive & High-Level Support</h3>
                             <label class="task-item">
-                                <input type="checkbox" data-hours="10" data-category="Executive" class="task-checkbox">
-                                <span class="text-gray-700 text-base">Manage complex calendars & prioritize/draft high-level emails (10 hrs/wk)</span>
+                                <input type="checkbox" data-hours="10" data-category="Executive" name="task[]" value="Executive: Manage complex calendars & prioritize/draft high-level emails" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Manage complex calendars & prioritize/draft high-level emails</span>
                             </label>
                             <label class="task-item">
-                                <input type="checkbox" data-hours="8" data-category="Executive" class="task-checkbox">
-                                <span class="text-gray-700 text-base">Prepare meeting agendas, notes, and strategic follow-ups (8 hrs/wk)</span>
+                                <input type="checkbox" data-hours="8" data-category="Executive" name="task[]" value="Executive: Prepare meeting agendas, notes, and strategic follow-ups" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Prepare meeting agendas, notes, and strategic follow-ups</span>
                             </label>
                             <label class="task-item">
-                                <input type="checkbox" data-hours="7" data-category="Executive" class="task-checkbox">
-                                <span class="text-gray-700 text-base">Liaise with internal teams/partners on executive's behalf (7 hrs/wk)</span>
+                                <input type="checkbox" data-hours="7" data-category="Executive" name="task[]" value="Executive: Liaise with internal teams/partners on executive's behalf" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Liaise with internal teams/partners on executive's behalf</span>
                             </label>
                             <label class="task-item">
-                                <input type="checkbox" data-hours="5" data-category="Executive" class="task-checkbox">
-                                <span class="text-gray-700 text-base">Handle confidential info & provide proactive support (5 hrs/wk)</span>
+                                <input type="checkbox" data-hours="5" data-category="Executive" name="task[]" value="Executive: Handle confidential info & provide proactive support" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Handle confidential info & provide proactive support</span>
                             </label>
                             
                             <h3 class="task-category-heading text-xl">E-commerce Management</h3>
                             <label class="task-item">
-                                <input type="checkbox" data-hours="10" data-category="E-commerce" class="task-checkbox">
-                                <span class="text-gray-700 text-base">Upload/update product listings (SKUs, pricing, images) (10 hrs/wk)</span>
+                                <input type="checkbox" data-hours="10" data-category="E-commerce" name="task[]" value="E-commerce: Upload/update product listings (SKUs, pricing, images)" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Upload/update product listings (SKUs, pricing, images)</span>
                             </label>
                             <label class="task-item">
-                                <input type="checkbox" data-hours="6" data-category="E-commerce" class="task-checkbox">
-                                <span class="text-gray-700 text-base">Write SEO-friendly product titles and descriptions (6 hrs/wk)</span>
+                                <input type="checkbox" data-hours="6" data-category="E-commerce" name="task[]" value="E-commerce: Write SEO-friendly product titles and descriptions" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Write SEO-friendly product titles and descriptions</span>
                             </label>
                             <label class="task-item">
-                                <input type="checkbox" data-hours="8" data-category="E-commerce" class="task-checkbox">
-                                <span class="text-gray-700 text-base">Process, track, and fulfill orders & manage returns/refunds (8 hrs/wk)</span>
+                                <input type="checkbox" data-hours="8" data-category="E-commerce" name="task[]" value="E-commerce: Process, track, and fulfill orders & manage returns/refunds" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Process, track, and fulfill orders & manage returns/refunds</span>
                             </label>
                             <label class="task-item">
-                                <input type="checkbox" data-hours="4" data-category="E-commerce" class="task-checkbox">
-                                <span class="text-gray-700 text-base">Store maintenance & performance monitoring/reports (4 hrs/wk)</span>
+                                <input type="checkbox" data-hours="4" data-category="E-commerce" name="task[]" value="E-commerce: Store maintenance & performance monitoring/reports" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Store maintenance & performance monitoring/reports</span>
+                            </label>
+                            
+                            <h3 class="task-category-heading text-xl">Web Development & Technical</h3>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="10" data-category="WebDev" name="task[]" value="WebDev: Perform minor website updates, bug fixes, and maintenance" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Perform minor website updates, bug fixes, and maintenance (HTML/CSS/JS)</span>
+                            </label>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="8" data-category="WebDev" name="task[]" value="WebDev: Manage and update content on WordPress/Shopify platforms" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Manage and update content on WordPress/Shopify platforms</span>
+                            </label>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="7" data-category="WebDev" name="task[]" value="WebDev: Check website responsiveness, load speed, and SEO basics" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Check website responsiveness, load speed, and SEO basics</span>
+                            </label>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="5" data-category="WebDev" name="task[]" value="WebDev: Set up and integrate new web tools, forms, or plugins" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Set up and integrate new web tools, forms, or plugins</span>
                             </label>
 
                             <h3 class="task-category-heading text-xl">Other Tasks</h3>
-                            <label class="task-item">
-                                <input type="checkbox" data-hours="5" data-category="Admin" class="task-checkbox">
-                                <span class="text-gray-700 text-base">Others (Please specify) (5 hrs/wk)</span>
+                            <label class="task-item block">
+                                <input type="checkbox" data-hours="5" data-category="Admin" name="task[]" value="Admin: Other tasks (see next field)" class="task-checkbox flex-shrink-0" id="other-task-checkbox">
+                                <span class="text-gray-700 text-base flex items-center w-full">
+                                    Others (Please specify): 
+                                    <input type="text" placeholder="e.g., Run errands, software setup, etc." class="other-task-input text-sm" name="Other_Tasks_Details">
+                                </span>
                             </label>
+
+                            <h3 class="task-category-heading text-xl mt-8">Your Contact Information</h3>
+                            <div class="space-y-4">
+                                <input type="email" name="Email" placeholder="Your Email Address (Required)" required class="w-full p-3 border border-gray-300 rounded-lg focus:border-td-primary" />
+                            </div>
 
                         </div>
                     </div>
@@ -249,24 +311,28 @@
                                 </div>
                             </div>
                             
-                            <div class="mt-10 text-center">
-                                <p class="text-xl text-gray-700 font-medium mb-6">Ready to hire your recommended VA?</p>
-                                <a href="https://calendly.com/info-twindesk/30min" target="_blank" class="inline-block bg-td-pink text-white text-xl font-bold px-10 py-4 rounded-xl shadow-2xl hover:bg-td-primary transition duration-300 transform hover:scale-105">Schedule a FREE Call Now (30 Min)</a>
+                            <input type="hidden" id="summary-report-input" name="Summary_Report" value="">
+
+                            <div class="mt-8 text-center">
+                                <button type="submit" class="w-full bg-td-pink text-white text-xl font-bold px-10 py-4 rounded-xl shadow-2xl hover:bg-td-primary transition duration-300 transform hover:scale-105">
+                                    Send My VA Recommendation & Get Started
+                                </button>
                             </div>
-                        </div>
+                            
+                            <div id="calendar-embed-container">
+                                <h3 class="text-xl font-extrabold text-gray-900 mb-4 text-center">...or, book a call now (30 Min)</h3>
+                                
+                                <div class="calendly-inline-widget" data-url="https://calendly.com/info-twindesk/30min?month=2025-11" style="min-width:320px;height:700px;"></div>
+                                
+                            </div>
+                            </div>
                     </div>
                 </div>
 
-            </div>
+            </form>
         </section>
 
-        <section class="py-20 bg-td-primary/90 text-white">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-4xl font-extrabold mb-4">Reclaim Your Time & Scale Your Business.</h2>
-                <a href="https://calendly.com/info-twindesk/30min" target="_blank" class="inline-block bg-td-pink text-white text-xl font-bold px-10 py-4 rounded-xl shadow-2xl hover:bg-td-orange transition duration-300 transform hover:scale-105 mb-12">Schedule Call Now (30 Min)</a>
-            </div>
-        </section>
-    </main>
+        </main>
 
     <footer class="bg-gray-800 text-white py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
@@ -287,33 +353,39 @@
         document.addEventListener('DOMContentLoaded', () => {
             lucide.createIcons();
 
-            // Updated Mapping for VA Types
+            // Mappings (Unchanged from previous version, kept for completeness)
             const vaTypeMapping = {
                 'Admin': 'Administrative Assistant',
-                'Bookkeeping': 'Bookkeeper / AR Specialist', // NEW MAPPING
+                'Bookkeeping': 'Bookkeeper / AR Specialist', 
                 'Customer Service': 'Customer Service VA',
+                'Design': 'Graphic Designer',
                 'Marketing': 'Marketing VA',
                 'Executive': 'Executive Assistant (EA)',
                 'E-commerce': 'E-commerce Specialist',
+                'WebDev': 'Web Developer',
             };
             
-            // Updated Mapping for Colors
             const vaColorMapping = {
                 'Administrative Assistant': 'text-td-primary',
-                'Bookkeeper / AR Specialist': 'text-td-secondary', // NEW COLOR
+                'Bookkeeper / AR Specialist': 'text-td-secondary',
                 'Customer Service VA': 'text-td-pink',
+                'Graphic Designer': 'text-td-orange',
                 'Marketing VA': 'text-td-orange',
-                'Executive Assistant (EA)': 'text-td-primary', // Changed Executive to use primary color for contrast
+                'Executive Assistant (EA)': 'text-td-primary',
                 'E-commerce Specialist': 'text-td-pink',
+                'Web Developer': 'text-td-secondary',
                 'General Tasks': 'text-gray-400',
             };
 
+            const form = document.getElementById('va-assessment-form');
             const checkboxes = document.querySelectorAll('.task-checkbox');
+            const otherTaskInput = document.querySelector('input[name="Other_Tasks_Details"]');
             const totalHoursEl = document.getElementById('total-hours');
             const vaCommitmentEl = document.getElementById('va-commitment');
             const vaTypeEl = document.getElementById('va-type');
+            const summaryInput = document.getElementById('summary-report-input');
             
-            const colorClasses = Object.values(vaColorMapping).join(' '); // Dynamically create the list of all color classes
+            const colorClasses = Object.values(vaColorMapping).join(' ');
 
             function updateRecommendation() {
                 let totalHours = 0;
@@ -329,7 +401,7 @@
                     }
                 });
 
-                // --- 1. Update Hours and Commitment ---
+                // --- 1. Update Hours and Commitment (UI) ---
                 totalHoursEl.textContent = totalHours;
 
                 let commitment = 'N/A';
@@ -347,7 +419,7 @@
                 }
                 vaCommitmentEl.textContent = commitment;
 
-                // --- 2. Determine VA Type ---
+                // --- 2. Determine VA Type (UI) ---
                 let topCategoryKey = 'General Tasks';
                 let maxHours = 0;
                 
@@ -360,22 +432,46 @@
                     }
                 }
                 
-                // Map the internal category key to the display name
                 const vaTypeDisplayName = vaTypeMapping[topCategoryKey] || 'General Tasks';
                 vaTypeEl.textContent = vaTypeDisplayName;
 
-                // Apply color coding for VA Type
                 vaTypeEl.classList.remove(colorClasses);
                 const typeColor = vaColorMapping[vaTypeDisplayName] || 'text-gray-400';
                 vaTypeEl.classList.add(typeColor);
+                
+                // --- 3. Prepare Hidden Form Summary ---
+                // This prepares a clean summary string for Formspree submission
+                const checkedTasks = Array.from(checkboxes)
+                    .filter(c => c.checked)
+                    .map(c => {
+                        let taskName = c.value;
+                        const hours = c.getAttribute('data-hours');
+                        
+                        // If it's the "Other" task, append the details input value
+                        if (c.id === 'other-task-checkbox' && otherTaskInput.value) {
+                            taskName = `Admin: Other Tasks (Details: ${otherTaskInput.value})`;
+                        }
+                        return `${taskName} [${hours} hrs]`;
+                    }).join(' | ');
+
+                const summaryReport = `Recommendation: ${vaTypeDisplayName}, Commitment: ${commitment}, Total Hours: ${totalHours}. Checked Tasks: [${checkedTasks}]`;
+                
+                summaryInput.value = summaryReport;
             }
 
-            // Attach event listeners
+            // Attach event listeners to update UI/Form values
             checkboxes.forEach(checkbox => {
                 checkbox.addEventListener('change', updateRecommendation);
             });
 
-            // Initial calculation on load
+            // Listen to changes in the "Other Tasks" text input as well
+            if (otherTaskInput) {
+                otherTaskInput.addEventListener('input', updateRecommendation);
+                // Also listen for change on the checkbox next to the input
+                document.getElementById('other-task-checkbox').addEventListener('change', updateRecommendation);
+            }
+
+            // Final check on load
             updateRecommendation();
         });
     </script>
