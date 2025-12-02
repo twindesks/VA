@@ -1,176 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TwinDesk | Elite Virtual Assistants. Zero Hiring Risk. Guaranteed.</title>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'td-primary': '#3f9dd1', 'td-secondary': '#66aedd', 'td-pink': '#f27ea9', 'td-orange': '#faaf20', 'td-light-orange': '#ffdf99',
-                    },
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
-                },
-            },
-        }
-    </script>
-    <style>
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; background-color: #f7f9fb; }
-        .flip-card { perspective: 1000px; }
-        .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.8s; transform-style: preserve-3d; }
-        .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
-        .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: 1rem; padding: 1rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); display: flex; flex-direction: column; justify-content: center; align-items: center; }
-        .flip-card-front { background-color: #ffffff; border: 1px solid #e5e7eb; }
-        .flip-card-back { color: white; transform: rotateY(180deg); }
-        .accordion-icon { transition: transform 0.3s ease-in-out; }
-        .accordion[aria-expanded="true"] .accordion-icon { transform: rotate(90deg); }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TwinDesk | Elite Virtual Assistants. Zero Hiring Risk. Guaranteed.</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'td-primary': '#3f9dd1', 'td-secondary': '#66aedd', 'td-pink': '#f27ea9', 'td-orange': '#faaf20', 'td-light-orange': '#ffdf99',
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                },
+            },
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background-color: #f7f9fb; }
+        .flip-card { perspective: 1000px; }
+        .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.8s; transform-style: preserve-3d; }
+        .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+        .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: 1rem; padding: 1rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .flip-card-front { background-color: #ffffff; border: 1px solid #e5e7eb; }
+        .flip-card-back { color: white; transform: rotateY(180deg); }
+        .accordion-icon { transition: transform 0.3s ease-in-out; }
+        .accordion[aria-expanded="true"] .accordion-icon { transform: rotate(180deg); } /* Changed from 90deg to 180deg for down/up rotation */
+    </style>
 </head>
 
 <body>
 
-    <header class="bg-white sticky top-0 z-50 shadow-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <a href="index.html" title="TwinDesk Homepage" class="flex items-center">
-                <img src="https://live.staticflickr.com/65535/54901201395_a052e1f973_b.jpg" alt="TwinDesk Logo" class="h-20 w-auto md:h-24"/>
-            </a>
-            <nav class="hidden md:flex space-x-6 lg:space-x-8">
-                <a href="index.html" class="text-td-primary font-bold transition duration-300">Home</a>
-                <a href="our-virtual-assistants.html" class="text-gray-600 hover:text-td-primary font-medium transition duration-300">Our Virtual Assistants</a>
-                <a href="va-matching-process.html" class="text-gray-600 hover:text-td-primary font-medium transition duration-300">VA Matching Process</a>
-                                <a href="#team" class="text-gray-600 hover:text-td-primary font-medium transition duration-300">Team</a>
-                <a href="#faq" class="text-gray-600 hover:text-td-primary font-medium transition duration-300">FAQ</a>
-            </nav>
-            <a href="https://calendly.com/info-twindesk/30min?month=2025-11" class="bg-td-primary text-white px-4 py-2 rounded-lg font-medium hover:bg-td-secondary transition duration-300 shadow-md" target="_blank">Schedule Call</a>
-        </div>
-    </header>
+    <header class="bg-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#" title="TwinDesk Homepage" class="flex items-center">
+                <img src="https://live.staticflickr.com/65535/54901201395_a052e1f973_b.jpg" alt="TwinDesk Logo" class="h-20 w-auto md:h-24"/>
+            </a>
+            <nav class="hidden md:flex space-x-6 lg:space-x-8">
+                <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="text-td-primary font-bold transition duration-300">Home</a>
+                <a href="our-virtual-assistants.html" class="text-gray-600 hover:text-td-primary font-medium transition duration-300">Our Virtual Assistants</a>
+                <a href="va-matching-process.html" class="text-gray-600 hover:text-td-primary font-medium transition duration-300">VA Matching Process</a>
+                <a href="#team" class="text-gray-600 hover:text-td-primary font-medium transition duration-300">Team</a>
+                <a href="#faq" class="text-gray-600 hover:text-td-primary font-medium transition duration-300">FAQ</a>
+            </nav>
+            <a href="https://calendly.com/info-twindesk/30min?month=2025-11" class="bg-td-primary text-white px-4 py-2 rounded-lg font-medium hover:bg-td-secondary transition duration-300 shadow-md" target="_blank">Schedule Call</a>
+        </div>
+    </header>
 
-    <main>
-        <a href="https://wa.me/639054401660" target="_blank" class="fixed bottom-8 right-8 z-[100] bg-[#25D366] text-white px-6 py-3 rounded-full shadow-2xl hover:scale-105 transition-transform duration-300 flex items-center gap-3 border-2 border-white group animate-bounce hover:animate-none">
-            <i data-lucide="message-circle" class="w-6 h-6 fill-white text-[#25D366]"></i> 
-            <span class="font-bold text-lg tracking-wide">Let's Chat</span>
-        </a>
+    <main>
+        <a href="https://wa.me/639054401660" target="_blank" class="fixed bottom-8 right-8 z-[100] bg-[#25D366] text-white px-6 py-3 rounded-full shadow-2xl hover:scale-105 transition-transform duration-300 flex items-center gap-3 border-2 border-white group animate-bounce hover:animate-none">
+            <i data-lucide="message-circle" class="w-6 h-6 fill-white text-[#25D366]"></i> 
+            <span class="font-bold text-lg tracking-wide">Let's Chat</span>
+        </a>
 
-        <section id="home" class="bg-td-secondary/10 pt-16 pb-24 border-b-4 border-td-primary">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-4">Reliable Virtual Assistants. <span class="text-td-primary">Zero Hiring Risk.</span> Guaranteed.</h1>
-                <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">We match you with friendly, skilled VAs for <strong>Executive, Admin, and Customer Service</strong> roles.</p>
-                <div class="mt-10"><a href="https://calendly.com/info-twindesk/30min" target="_blank" class="inline-block bg-td-orange text-white text-lg font-semibold px-8 py-3 rounded-xl shadow-lg hover:bg-td-pink transition duration-300 transform hover:scale-105">Discover Your Perfect Match</a></div>
-            </div>
-        </section>
+        <section id="home" class="bg-td-secondary/10 pt-16 pb-24 border-b-4 border-td-primary">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-4">Reliable Virtual Assistants. <span class="text-td-primary">Zero Hiring Risk.</span> Guaranteed.</h1>
+                <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">We match you with friendly, skilled VAs for <strong>Executive, Admin, and Customer Service</strong> roles.</p>
+                <div class="mt-10"><a href="https://calendly.com/info-twindesk/30min" target="_blank" class="inline-block bg-td-orange text-white text-lg font-semibold px-8 py-3 rounded-xl shadow-lg hover:bg-td-pink transition duration-300 transform hover:scale-105">Discover Your Perfect Match</a></div>
+            </div>
+        </section>
 
-        <section class="py-16 bg-white border-b border-gray-100">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
-                    <div class="flex justify-center lg:justify-end"><img src="https://live.staticflickr.com/65535/54904115926_b1d3984ed9.jpg" alt="Virtual Assistant" class="w-full max-w-md rounded-2xl shadow-xl border-4 border-td-secondary/20"></div>
-                    <div>
-                        <h2 class="text-3xl font-extrabold text-gray-900 mb-6">Did you know?</h2>
-                        <p class="text-xl text-gray-700 mb-8 leading-relaxed">For just <span class="text-td-primary font-bold">$9,600 a year</span>, you can hire skilled, full-time remote staff.</p>
-                        <ul class="space-y-5">
-                            <li class="flex items-start"><div class="bg-td-orange/10 p-1 rounded-full mr-3 mt-1"><i data-lucide="check" class="w-5 h-5 text-td-orange"></i></div><span class="text-gray-700 text-lg">Save up to <strong>70%</strong> compared to hiring in the US.</span></li>
-                            <li class="flex items-start"><div class="bg-td-orange/10 p-1 rounded-full mr-3 mt-1"><i data-lucide="check" class="w-5 h-5 text-td-orange"></i></div><span class="text-gray-700 text-lg">Great experience in sales, support, and admin.</span></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <section class="py-16 bg-white border-b border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="flex justify-center lg:justify-end"><img src="https://live.staticflickr.com/65535/54904115926_b1d3984ed9.jpg" alt="Virtual Assistant" class="w-full max-w-md rounded-2xl shadow-xl border-4 border-td-secondary/20"></div>
+                    <div>
+                        <h2 class="text-3xl font-extrabold text-gray-900 mb-6">Did you know?</h2>
+                        <p class="text-xl text-gray-700 mb-8 leading-relaxed">For just <span class="text-td-primary font-bold">$9,600 a year</span>, you can hire skilled, full-time remote staff.</p>
+                        <ul class="space-y-5">
+                            <li class="flex items-start"><div class="bg-td-orange/10 p-1 rounded-full mr-3 mt-1"><i data-lucide="check" class="w-5 h-5 text-td-orange"></i></div><span class="text-gray-700 text-lg">Save up to <strong>70%</strong> compared to hiring in the US.</span></li>
+                            <li class="flex items-start"><div class="bg-td-orange/10 p-1 rounded-full mr-3 mt-1"><i data-lucide="check" class="w-5 h-5 text-td-orange"></i></div><span class="text-gray-700 text-lg">Great experience in sales, support, and admin.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <section class="py-16 bg-td-primary/5 border-b border-gray-100">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
-                    <div class="order-2 lg:order-1">
-                        <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">That's where we come in.</h2>
-                        <p class="text-xl text-td-primary font-semibold mb-8">Let us find your next favorite employee.</p>
-                        <div class="mt-10"><a href="https://calendly.com/info-twindesk/30min" target="_blank" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-xl text-white bg-td-primary hover:bg-td-secondary md:py-4 md:text-lg shadow-lg transition duration-300">Schedule a Call</a></div>
-                    </div>
-                    <div class="flex justify-center lg:justify-start order-1 lg:order-2"><img src="https://live.staticflickr.com/65535/54904422015_18ec91827f.jpg" alt="TwinDesk Team" class="w-full max-w-sm rounded-2xl shadow-2xl border-4 border-white rotate-2 hover:rotate-0 transition duration-500"></div>
-                </div>
-            </div>
-        </section>
+        <section class="py-16 bg-td-primary/5 border-b border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 lg:order-1">
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">That's where we come in.</h2>
+                        <p class="text-xl text-td-primary font-semibold mb-8">Let us find your next favorite employee.</p>
+                        <div class="mt-10"><a href="https://calendly.com/info-twindesk/30min" target="_blank" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-xl text-white bg-td-primary hover:bg-td-secondary md:py-4 md:text-lg shadow-lg transition duration-300">Schedule a Call</a></div>
+                    </div>
+                    <div class="flex justify-center lg:justify-start order-1 lg:order-2"><img src="https://live.staticflickr.com/65535/54904422015_18ec91827f.jpg" alt="TwinDesk Team" class="w-full max-w-sm rounded-2xl shadow-2xl border-4 border-white rotate-2 hover:rotate-0 transition duration-500"></div>
+                </div>
+            </div>
+        </section>
 
-                <section id="team" class="py-12 bg-td-pink/10">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-4xl font-extrabold text-gray-900 mb-10">Meet Our TwinDesk Family</h2>
-                <div class="flex flex-wrap justify-center gap-6">
-                    <div class="flip-card w-56 h-72">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front"><div class="w-24 h-24 mx-auto mb-3 relative"><img src="https://live.staticflickr.com/65535/54906421933_24a3b62172_z.jpg" class="w-full h-full object-cover rounded-full border-2 border-td-primary shadow-sm"></div><h3 class="text-lg font-bold text-gray-900">Maria</h3><p class="text-td-primary font-semibold text-xs uppercase tracking-wide mt-2">Co-Founder & Client Success</p></div>
-                            <div class="flip-card-back bg-td-primary"><h4 class="font-bold text-base mb-3">About Maria</h4><p class="text-xs leading-relaxed px-1">Ensures client partnerships are built on trust.</p></div>
-                        </div>
-                    </div>
-                    <div class="flip-card w-56 h-72">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front"><div class="w-24 h-24 mx-auto mb-3 relative"><img src="https://live.staticflickr.com/65535/54940452752_6e9fa8096c_n.jpg" class="w-full h-full object-cover rounded-full border-2 border-td-orange shadow-sm"></div><h3 class="text-lg font-bold text-gray-900">Suzette</h3><p class="text-td-orange font-semibold text-xs uppercase tracking-wide mt-2">Co-Founder & Growth</p></div>
-                            <div class="flip-card-back bg-td-orange"><h4 class="font-bold text-base mb-3">About Suzette</h4><p class="text-xs leading-relaxed px-1">Focuses on strategic expansion and scalability.</p></div>
-                        </div>
-                    </div>
-                    <div class="flip-card w-56 h-72">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front"><div class="w-24 h-24 mx-auto mb-3 relative"><img src="https://live.staticflickr.com/65535/54941325546_61c8851cb4_n.jpg" class="w-full h-full object-cover rounded-full border-2 border-td-pink shadow-sm"></div><h3 class="text-lg font-bold text-gray-900">John </h3><p class="text-td-pink font-semibold text-xs uppercase tracking-wide mt-2">Ops / Admin Manager</p></div>
-                            <div class="flip-card-back bg-td-pink"><h4 class="font-bold text-base mb-3">About John</h4><p class="text-xs leading-relaxed px-1">Oversees operations backbone.</p></div>
-                        </div>
-                    </div>
-                    <div class="flip-card w-56 h-72">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front"><div class="w-24 h-24 mx-auto mb-3 relative"><img src="https://live.staticflickr.com/65535/54941528818_088b5bc10f_n.jpg" class="w-full h-full object-cover rounded-full border-2 border-td-secondary shadow-sm"></div><h3 class="text-lg font-bold text-gray-900">Princess</h3><p class="text-td-secondary font-semibold text-xs uppercase tracking-wide mt-2">HR & Recruitment</p></div>
-                            <div class="flip-card-back bg-td-secondary"><h4 class="font-bold text-base mb-3">About Princess</h4><p class="text-xs leading-relaxed px-1">Gatekeeper of quality talent.</p></div>
-                        </div>
-                    </div>
-                    <div class="flip-card w-56 h-72">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front"><div class="w-24 h-24 mx-auto mb-3 relative"><img src="https://live.staticflickr.com/65535/54940462787_d46ed4827e_n.jpg" class="w-full h-full object-cover rounded-full border-2 border-td-orange shadow-sm"></div><h3 class="text-lg font-bold text-gray-900">Jayson</h3><p class="text-td-orange font-semibold text-xs uppercase tracking-wide mt-2">Recruiting Specialist</p></div>
-                            <div class="flip-card-back bg-td-orange"><h4 class="font-bold text-base mb-3">About Jayson</h4><p class="text-xs leading-relaxed px-1">Proactively hunts for niche talent.</p></div>
-                    </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="faq" class="py-20 bg-gray-50 border-t border-gray-200">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-4">Frequently Asked Questions</h2>
-                <div class="space-y-4">
-                    <div class="border border-gray-200 bg-white rounded-xl overflow-hidden shadow-sm">
-                        <button class="accordion w-full flex justify-between items-center p-6 text-lg font-semibold text-left text-gray-800 hover:bg-gray-50 transition duration-300" aria-expanded="false" data-target="faq-1"><span>What exactly is TwinDesk?</span><i data-lucide="chevron-down" class="accordion-icon w-6 h-6 text-td-primary"></i></button>
-                        <div id="faq-1" class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"><div class="p-6 text-gray-600 border-t border-gray-100"><p>TwinDesk connects small business owners with elite, pre-vetted support from the Philippines.</p></div></div>
-                    </div>
-                    <div class="border border-gray-200 bg-white rounded-xl overflow-hidden shadow-sm">
-                        <button class="accordion w-full flex justify-between items-center p-6 text-lg font-semibold text-left text-gray-800 hover:bg-gray-50 transition duration-300" aria-expanded="false" data-target="faq-billing"><span>How does billing work?</span><i data-lucide="chevron-down" class="accordion-icon w-6 h-6 text-td-primary"></i></button>
-                        <div id="faq-billing" class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"><div class="p-6 text-gray-600 border-t border-gray-100"><p>Plans are billed weekly in advance every Monday.</p></div></div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <section id="team" class="py-12 bg-td-pink/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-extrabold text-gray-900 mb-10">Meet Our TwinDesk Family</h2>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <div class="flip-card w-56 h-72">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front"><div class="w-24 h-24 mx-auto mb-3 relative"><img src="https://live.staticflickr.com/65535/54906421933_24a3b62172_z.jpg" class="w-full h-full object-cover rounded-full border-2 border-td-primary shadow-sm"></div><h3 class="text-lg font-bold text-gray-900">Maria</h3><p class="text-td-primary font-semibold text-xs uppercase tracking-wide mt-2">Co-Founder & Client Success</p></div>
+                            <div class="flip-card-back bg-td-primary"><h4 class="font-bold text-base mb-3">About Maria</h4><p class="text-xs leading-relaxed px-1">Ensures client partnerships are built on trust.</p></div>
+                        </div>
+                    </div>
+                    <div class="flip-card w-56 h-72">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front"><div class="w-24 h-24 mx-auto mb-3 relative"><img src="https://live.staticflickr.com/65535/54940452752_6e9fa8096c_n.jpg" class="w-full h-full object-cover rounded-full border-2 border-td-orange shadow-sm"></div><h3 class="text-lg font-bold text-gray-900">Suzette</h3><p class="text-td-orange font-semibold text-xs uppercase tracking-wide mt-2">Co-Founder & Growth</p></div>
+                            <div class="flip-card-back bg-td-orange"><h4 class="font-bold text-base mb-3">About Suzette</h4><p class="text-xs leading-relaxed px-1">Focuses on strategic expansion and scalability.</p></div>
+                        </div>
+                    </div>
+                    <div class="flip-card w-56 h-72">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front"><div class="w-24 h-24 mx-auto mb-3 relative"><img src="https://live.staticflickr.com/65535/54941325546_61c8851cb4_n.jpg" class="w-full h-full object-cover rounded-full border-2 border-td-pink shadow-sm"></div><h3 class="text-lg font-bold text-gray-900">John </h3><p class="text-td-pink font-semibold text-xs uppercase tracking-wide mt-2">Ops / Admin Manager</p></div>
+                            <div class="flip-card-back bg-td-pink"><h4 class="font-bold text-base mb-3">About John</h4><p class="text-xs leading-relaxed px-1">Oversees operations backbone.</p></div>
+                        </div>
+                    </div>
+                    <div class="flip-card w-56 h-72">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front"><div class="w-24 h-24 mx-auto mb-3 relative"><img src="https://live.staticflickr.com/65535/54941528818_088b5bc10f_n.jpg" class="w-full h-full object-cover rounded-full border-2 border-td-secondary shadow-sm"></div><h3 class="text-lg font-bold text-gray-900">Princess</h3><p class="text-td-secondary font-semibold text-xs uppercase tracking-wide mt-2">HR & Recruitment</p></div>
+                            <div class="flip-card-back bg-td-secondary"><h4 class="font-bold text-base mb-3">About Princess</h4><p class="text-xs leading-relaxed px-1">Gatekeeper of quality talent.</p></div>
+                        </div>
+                    </div>
+                    <div class="flip-card w-56 h-72">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front"><div class="w-24 h-24 mx-auto mb-3 relative"><img src="https://live.staticflickr.com/65535/54940462787_d46ed4827e_n.jpg" class="w-full h-full object-cover rounded-full border-2 border-td-orange shadow-sm"></div><h3 class="text-lg font-bold text-gray-900">Jayson</h3><p class="text-td-orange font-semibold text-xs uppercase tracking-wide mt-2">Recruiting Specialist</p></div>
+                            <div class="flip-card-back bg-td-orange"><h4 class="font-bold text-base mb-3">About Jayson</h4><p class="text-xs leading-relaxed px-1">Proactively hunts for niche talent.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="faq" class="py-20 bg-gray-50 border-t border-gray-200">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-4">Frequently Asked Questions</h2>
+                <div class="space-y-4">
+                    <div class="border border-gray-200 bg-white rounded-xl overflow-hidden shadow-sm">
+                        <button class="accordion w-full flex justify-between items-center p-6 text-lg font-semibold text-left text-gray-800 hover:bg-gray-50 transition duration-300" aria-expanded="false" data-target="faq-1"><span>What exactly is TwinDesk?</span><i data-lucide="chevron-down" class="accordion-icon w-6 h-6 text-td-primary"></i></button>
+                        <div id="faq-1" class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"><div class="p-6 text-gray-600 border-t border-gray-100"><p>TwinDesk connects small business owners with elite, pre-vetted support from the Philippines.</p></div></div>
+                    </div>
+                    <div class="border border-gray-200 bg-white rounded-xl overflow-hidden shadow-sm">
+                        <button class="accordion w-full flex justify-between items-center p-6 text-lg font-semibold text-left text-gray-800 hover:bg-gray-50 transition duration-300" aria-expanded="false" data-target="faq-billing"><span>How does billing work?</span><i data-lucide="chevron-down" class="accordion-icon w-6 h-6 text-td-primary"></i></button>
+                        <div id="faq-billing" class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"><div class="p-6 text-gray-600 border-t border-gray-100"><p>Plans are billed weekly in advance every Monday.</p></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <section id="schedule-call" class="py-20 bg-td-primary/90 text-white">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-4xl font-extrabold mb-4">Ready to Reclaim Your Time?</h2>
-                <a href="https://calendly.com/info-twindesk/30min" target="_blank" class="inline-block bg-td-pink text-white text-xl font-bold px-10 py-4 rounded-xl shadow-2xl hover:bg-td-orange transition duration-300 transform hover:scale-105 mb-12">Schedule Call Now (30 Min)</a>
-            </div>
-        </section>
-    </main>
+        <section id="schedule-call" class="py-20 bg-td-primary/90 text-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-extrabold mb-4">Ready to Reclaim Your Time?</h2>
+                <a href="https://calendly.com/info-twindesk/30min" target="_blank" class="inline-block bg-td-pink text-white text-xl font-bold px-10 py-4 rounded-xl shadow-2xl hover:bg-td-orange transition duration-300 transform hover:scale-105 mb-12">Schedule Call Now (30 Min)</a>
+            </div>
+        </section>
+    </main>
 
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
-            <div class="mb-4 md:mb-0"><img src="https://live.staticflickr.com/65535/54901201395_a052e1f973_b.jpg" alt="TwinDesk Logo" class="h-12 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition duration-300"/></div>
-            <nav class="flex flex-wrap justify-center gap-6 mb-4 md:mb-0">
-                <a href="index.html" class="text-white font-semibold transition duration-300">Home</a>
-                <a href="our-virtual-assistants.html" class="text-gray-400 hover:text-white transition duration-300">Our Virtual Assistants</a>
-                <a href="va-matching-process.html" class="text-gray-400 hover:text-white transition duration-300">VA Matching Process</a>
-                                <a href="#team" class="text-gray-400 hover:text-white transition duration-300">Team</a>
-                <a href="#faq" class="text-gray-400 hover:text-white transition duration-300">FAQ</a>
-            </nav>
-            <div class="text-gray-400 text-sm">&copy; 2024 TwinDesk. All rights reserved.</div>
-        </div>
-    </footer>
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0"><img src="https://live.staticflickr.com/65535/54901201395_a052e1f973_b.jpg" alt="TwinDesk Logo" class="h-12 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition duration-300"/></div>
+            <nav class="flex flex-wrap justify-center gap-6 mb-4 md:mb-0">
+                <a href="#" class="text-white font-semibold transition duration-300">Home</a>
+                <a href="our-virtual-assistants.html" class="text-gray-400 hover:text-white transition duration-300">Our Virtual Assistants</a>
+                <a href="va-matching-process.html" class="text-gray-400 hover:text-white transition duration-300">VA Matching Process</a>
+                <a href="#team" class="text-gray-400 hover:text-white transition duration-300">Team</a>
+                <a href="#faq" class="text-gray-400 hover:text-white transition duration-300">FAQ</a>
+            </nav>
+            <div class="text-gray-400 text-sm">&copy; 2024 TwinDesk. All rights reserved.</div>
+        </div>
+    </footer>
 
-    <script>document.addEventListener('DOMContentLoaded', () => { lucide.createIcons(); const accordionButtons = document.querySelectorAll('.accordion'); accordionButtons.forEach(button => { button.addEventListener('click', () => { const targetId = button.getAttribute('data-target'); const targetContent = document.getElementById(targetId); const isExpanded = button.getAttribute('aria-expanded') === 'true'; accordionButtons.forEach(otherButton => { if (otherButton !== button) { otherButton.setAttribute('aria-expanded', 'false'); const otherContent = document.getElementById(otherButton.getAttribute('data-target')); otherContent.style.maxHeight = null; const icon = otherButton.querySelector('.accordion-icon'); if(icon) icon.style.transform = 'rotate(0deg)'; } }); if (isExpanded) { button.setAttribute('aria-expanded', 'false'); targetContent.style.maxHeight = null; const icon = button.querySelector('.accordion-icon'); if(icon) icon.style.transform = 'rotate(0deg)'; } else { button.setAttribute('aria-expanded', 'true'); targetContent.style.maxHeight = targetContent.scrollHeight + "px"; const icon = button.querySelector('.accordion-icon'); if(icon) icon.style.transform = 'rotate(180deg)'; } }); }); const allContent = document.querySelectorAll('.accordion-content'); allContent.forEach(content => { content.style.transition = 'max-height 0.5s ease-in-out'; }); });</script>
+    <script>document.addEventListener('DOMContentLoaded', () => { lucide.createIcons(); const accordionButtons = document.querySelectorAll('.accordion'); accordionButtons.forEach(button => { button.addEventListener('click', () => { const targetId = button.getAttribute('data-target'); const targetContent = document.getElementById(targetId); const isExpanded = button.getAttribute('aria-expanded') === 'true'; accordionButtons.forEach(otherButton => { if (otherButton !== button) { otherButton.setAttribute('aria-expanded', 'false'); const otherContent = document.getElementById(otherButton.getAttribute('data-target')); otherContent.style.maxHeight = null; const icon = otherButton.querySelector('.accordion-icon'); if(icon) icon.style.transform = 'rotate(0deg)'; } }); if (isExpanded) { button.setAttribute('aria-expanded', 'false'); targetContent.style.maxHeight = null; const icon = button.querySelector('.accordion-icon'); if(icon) icon.style.transform = 'rotate(0deg)'; } else { button.setAttribute('aria-expanded', 'true'); targetContent.style.maxHeight = targetContent.scrollHeight + "px"; const icon = button.querySelector('.accordion-icon'); if(icon) icon.style.transform = 'rotate(180deg)'; } }); }); const allContent = document.querySelectorAll('.accordion-content'); allContent.forEach(content => { content.style.transition = 'max-height 0.5s ease-in-out'; }); });</script>
 </body>
 </html>
