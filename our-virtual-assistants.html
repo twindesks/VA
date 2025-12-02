@@ -25,32 +25,37 @@
     <style>
         html { scroll-behavior: smooth; }
         body { font-family: 'Inter', sans-serif; background-color: #f7f9fb; }
-        .role-card { transition: all 0.4s ease-in-out; }
-        .role-card:hover { transform: none; box-shadow: none; } /* Remove hover effect for checklist */
         .task-item {
             display: flex;
             align-items: center;
             cursor: pointer;
-            padding: 8px 0;
+            padding: 10px 0;
             transition: background-color 0.2s;
+            border-bottom: 1px dashed #e5e7eb;
+        }
+        .task-item:last-child {
+            border-bottom: none;
         }
         .task-item:hover {
             background-color: #f7f9fb;
         }
         .task-item input[type="checkbox"] {
             margin-right: 12px;
-            accent-color: var(--td-primary); /* Use primary color for checkbox */
+            min-width: 1.25rem; /* Ensure checkbox is visible */
+            min-height: 1.25rem;
+            accent-color: var(--td-primary);
         }
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-in-out;
+        .task-category-heading {
+            font-weight: 800; /* Extra bold */
+            color: #1f2937; /* Dark gray */
+            margin-top: 2rem;
+            margin-bottom: 0.5rem;
+            border-left: 5px solid #faaf20; /* td-orange */
+            padding-left: 10px;
         }
-        .accordion-header[aria-expanded="true"] + .accordion-content {
-            max-height: 500px; /* Adjust as needed */
+        .task-category-heading:first-child {
+            margin-top: 0;
         }
-        .accordion-icon { transition: transform 0.3s ease-in-out; }
-        .accordion-header[aria-expanded="true"] .accordion-icon { transform: rotate(180deg); }
     </style>
 </head>
 
@@ -88,115 +93,139 @@
 
         <section class="py-20 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid lg:grid-cols-3 gap-10">
-                    <div id="admin-category" class="role-card bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-                        <button class="accordion-header w-full flex items-center justify-between bg-td-primary p-6" aria-expanded="true" data-target="admin-content">
-                            <h2 class="text-2xl font-bold text-white">Administrative Support</h2>
-                            <div class="bg-white/20 p-2 rounded-full"><i data-lucide="chevron-up" class="accordion-icon w-6 h-6 text-white"></i></div>
-                        </button>
-                        <div id="admin-content" class="accordion-content p-8">
-                            <p class="text-gray-600 italic mb-6 border-l-4 border-td-primary pl-4 text-sm">Select the tasks that consume your time the most.</p>
-                            <div class="space-y-2">
-                                <label class="task-item">
-                                    <input type="checkbox" data-hours="5" data-category="Admin" class="task-checkbox">
-                                    <span class="text-gray-700 text-base">Organize & respond to emails (5 hrs/wk)</span>
-                                </label>
-                                <label class="task-item">
-                                    <input type="checkbox" data-hours="10" data-category="Admin" class="task-checkbox">
-                                    <span class="text-gray-700 text-base">Manage calendar & schedule meetings (10 hrs/wk)</span>
-                                </label>
-                                <label class="task-item">
-                                    <input type="checkbox" data-hours="4" data-category="Admin" class="task-checkbox">
-                                    <span class="text-gray-700 text-base">Data entry & document prep (4 hrs/wk)</span>
-                                </label>
-                                <label class="task-item">
-                                    <input type="checkbox" data-hours="8" data-category="Admin" class="task-checkbox">
-                                    <span class="text-gray-700 text-base">Maintain digital filing systems (8 hrs/wk)</span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
+                <div class="grid lg:grid-cols-2 gap-10">
+                    
+                    <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 lg:col-span-1">
+                        <h2 class="text-3xl font-extrabold text-gray-900 mb-8 text-center">Which tasks take up your time?</h2>
+                        <div id="task-checklist" class="space-y-2">
+                            
+                            <h3 class="task-category-heading text-xl">General Administrative & Operations</h3>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="5" data-category="Admin" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Organize & respond to emails, flagging important messages (5 hrs/wk)</span>
+                            </label>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="10" data-category="Admin" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Schedule appointments, meetings, and reminders (10 hrs/wk)</span>
+                            </label>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="4" data-category="Admin" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Data entry & maintain digital filing systems (4 hrs/wk)</span>
+                            </label>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="6" data-category="Admin" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Track payments, process invoices, and manage receipts (6 hrs/wk)</span>
+                            </label>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="7" data-category="Admin" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Help with creating SOPs, guides, or checklists (7 hrs/wk)</span>
+                            </label>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="5" data-category="Admin" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Perform light research and assist with online tasks (5 hrs/wk)</span>
+                            </label>
 
-                    <div id="customer-category" class="role-card bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-                        <button class="accordion-header w-full flex items-center justify-between bg-td-pink p-6" aria-expanded="true" data-target="customer-content">
-                            <h2 class="text-2xl font-bold text-white">Customer Service & Sales</h2>
-                            <div class="bg-white/20 p-2 rounded-full"><i data-lucide="chevron-up" class="accordion-icon w-6 h-6 text-white"></i></div>
-                        </button>
-                        <div id="customer-content" class="accordion-content p-8">
-                            <p class="text-gray-600 italic mb-6 border-l-4 border-td-pink pl-4 text-sm">Select the tasks that relate to client interactions.</p>
-                            <div class="space-y-2">
-                                <label class="task-item">
-                                    <input type="checkbox" data-hours="15" data-category="Customer Service" class="task-checkbox">
-                                    <span class="text-gray-700 text-base">Handle support tickets/live chat (15 hrs/wk)</span>
-                                </label>
-                                <label class="task-item">
-                                    <input type="checkbox" data-hours="10" data-category="Customer Service" class="task-checkbox">
-                                    <span class="text-gray-700 text-base">Follow up with leads (10 hrs/wk)</span>
-                                </label>
-                                <label class="task-item">
-                                    <input type="checkbox" data-hours="5" data-category="Customer Service" class="task-checkbox">
-                                    <span class="text-gray-700 text-base">Manage CRM data/updates (5 hrs/wk)</span>
-                                </label>
-                                <label class="task-item">
-                                    <input type="checkbox" data-hours="8" data-category="Customer Service" class="task-checkbox">
-                                    <span class="text-gray-700 text-base">Outbound calls/appointment setting (8 hrs/wk)</span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
+                            <h3 class="task-category-heading text-xl">Customer Service & Sales Support</h3>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="15" data-category="Customer Service" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Handle support tickets/live chat/client inquiries professionally (15 hrs/wk)</span>
+                            </label>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="10" data-category="Customer Service" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Follow up with leads and manage CRM data/updates (10 hrs/wk)</span>
+                            </label>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="8" data-category="Customer Service" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Outbound calls/appointment setting (8 hrs/wk)</span>
+                            </label>
 
-                    <div id="marketing-category" class="role-card bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-                        <button class="accordion-header w-full flex items-center justify-between bg-td-orange p-6" aria-expanded="true" data-target="marketing-content">
-                            <h2 class="text-2xl font-bold text-white">Marketing & E-commerce</h2>
-                            <div class="bg-white/20 p-2 rounded-full"><i data-lucide="chevron-up" class="accordion-icon w-6 h-6 text-white"></i></div>
-                        </button>
-                        <div id="marketing-content" class="accordion-content p-8">
-                            <p class="text-gray-600 italic mb-6 border-l-4 border-td-orange pl-4 text-sm">Select the tasks related to your online presence.</p>
-                            <div class="space-y-2">
-                                <label class="task-item">
-                                    <input type="checkbox" data-hours="10" data-category="Marketing" class="task-checkbox">
-                                    <span class="text-gray-700 text-base">Social media content scheduling (10 hrs/wk)</span>
-                                </label>
-                                <label class="task-item">
-                                    <input type="checkbox" data-hours="5" data-category="Marketing" class="task-checkbox">
-                                    <span class="text-gray-700 text-base">Product listing & inventory checks (5 hrs/wk)</span>
-                                </label>
-                                <label class="task-item">
-                                    <input type="checkbox" data-hours="8" data-category="Marketing" class="task-checkbox">
-                                    <span class="text-gray-700 text-base">Email marketing support (8 hrs/wk)</span>
-                                </label>
-                                <label class="task-item">
-                                    <input type="checkbox" data-hours="12" data-category="Marketing" class="task-checkbox">
-                                    <span class="text-gray-700 text-base">Simple graphic/video creation (12 hrs/wk)</span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                            <h3 class="task-category-heading text-xl">Marketing & Social Media</h3>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="10" data-category="Marketing" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Social media content scheduling & content calendar creation (10 hrs/wk)</span>
+                            </label>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="8" data-category="Marketing" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Email marketing support (drafts, scheduling, list management) (8 hrs/wk)</span>
+                            </label>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="12" data-category="Marketing" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Simple graphic/video creation (Canva, Filmora, etc.) (12 hrs/wk)</span>
+                            </label>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="5" data-category="Marketing" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Respond to comments, messages, and monitor brand conversations (5 hrs/wk)</span>
+                            </label>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="4" data-category="Marketing" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Track performance metrics (reach, engagement) & reporting (4 hrs/wk)</span>
+                            </label>
 
-                <div class="mt-16 bg-td-light-orange/50 p-8 rounded-2xl border-4 border-td-orange shadow-2xl">
-                    <h2 class="text-3xl font-extrabold text-gray-900 mb-6 text-center">📋 Your VA Recommendation</h2>
-                    <div class="grid md:grid-cols-3 gap-6 text-center">
-                        <div class="p-4 bg-white rounded-xl shadow-md border-b-4 border-td-primary">
-                            <h3 class="text-lg font-semibold text-gray-600">Total Estimated Hours Needed</h3>
-                            <p id="total-hours" class="text-5xl font-extrabold text-td-primary mt-2">0</p>
-                            <p class="text-sm text-gray-500">hours / week</p>
-                        </div>
-                        <div class="p-4 bg-white rounded-xl shadow-md border-b-4 border-td-secondary">
-                            <h3 class="text-lg font-semibold text-gray-600">Recommended Commitment</h3>
-                            <p id="va-commitment" class="text-3xl font-bold text-td-secondary mt-4">N/A</p>
-                            <p class="text-sm text-gray-500">(Part-Time: 10-20 hrs | Full-Time: 40 hrs)</p>
-                        </div>
-                        <div class="p-4 bg-white rounded-xl shadow-md border-b-4 border-td-orange">
-                            <h3 class="text-lg font-semibold text-gray-600">Suggested VA Type</h3>
-                            <p id="va-type" class="text-3xl font-bold text-td-orange mt-4">N/A</p>
-                            <p class="text-sm text-gray-500">(Based on your top task category)</p>
+                            <h3 class="task-category-heading text-xl">Executive & High-Level Support</h3>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="10" data-category="Executive" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Manage complex calendars & prioritize/draft high-level emails (10 hrs/wk)</span>
+                            </label>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="8" data-category="Executive" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Prepare meeting agendas, notes, and strategic follow-ups (8 hrs/wk)</span>
+                            </label>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="7" data-category="Executive" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Liaise with internal teams/partners on executive's behalf (7 hrs/wk)</span>
+                            </label>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="5" data-category="Executive" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Handle confidential info & provide proactive support (5 hrs/wk)</span>
+                            </label>
+                            
+                            <h3 class="task-category-heading text-xl">E-commerce Management</h3>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="10" data-category="E-commerce" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Upload/update product listings (SKUs, pricing, images) (10 hrs/wk)</span>
+                            </label>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="6" data-category="E-commerce" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Write SEO-friendly product titles and descriptions (6 hrs/wk)</span>
+                            </label>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="8" data-category="E-commerce" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Process, track, and fulfill orders & manage returns/refunds (8 hrs/wk)</span>
+                            </label>
+                            <label class="task-item">
+                                <input type="checkbox" data-hours="4" data-category="E-commerce" class="task-checkbox">
+                                <span class="text-gray-700 text-base">Store maintenance & performance monitoring/reports (4 hrs/wk)</span>
+                            </label>
+
                         </div>
                     </div>
                     
-                    <div class="mt-10 text-center">
-                        <p class="text-xl text-gray-700 font-medium mb-6">Ready to hire your recommended VA?</p>
-                        <a href="https://calendly.com/info-twindesk/30min" target="_blank" class="inline-block bg-td-pink text-white text-xl font-bold px-10 py-4 rounded-xl shadow-2xl hover:bg-td-primary transition duration-300 transform hover:scale-105">Schedule a FREE Call Now (30 Min)</a>
+                    <div class="lg:col-span-1">
+                         <div class="bg-td-light-orange/50 p-8 rounded-2xl border-4 border-td-orange shadow-2xl sticky top-28">
+                            <h2 class="text-3xl font-extrabold text-gray-900 mb-6 text-center">📋 Your VA Recommendation</h2>
+                            <div class="grid md:grid-cols-3 gap-6 text-center">
+                                <div class="p-4 bg-white rounded-xl shadow-md border-b-4 border-td-primary md:col-span-3">
+                                    <h3 class="text-lg font-semibold text-gray-600">Total Estimated Hours Needed</h3>
+                                    <p id="total-hours" class="text-5xl font-extrabold text-td-primary mt-2">0</p>
+                                    <p class="text-sm text-gray-500">hours / week</p>
+                                </div>
+                                <div class="p-4 bg-white rounded-xl shadow-md border-b-4 border-td-secondary md:col-span-3">
+                                    <h3 class="text-lg font-semibold text-gray-600">Recommended Commitment</h3>
+                                    <p id="va-commitment" class="text-3xl font-bold text-gray-400 mt-4">N/A</p>
+                                    <p class="text-sm text-gray-500">(Part-Time: 10-29 hrs | Full-Time: 30+ hrs)</p>
+                                </div>
+                                <div class="p-4 bg-white rounded-xl shadow-md border-b-4 border-td-orange md:col-span-3">
+                                    <h3 class="text-lg font-semibold text-gray-600">Suggested VA Type</h3>
+                                    <p id="va-type" class="text-3xl font-bold text-gray-400 mt-4">N/A</p>
+                                    <p class="text-sm text-gray-500">(Based on your top task category)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-10 text-center">
+                                <p class="text-xl text-gray-700 font-medium mb-6">Ready to hire your recommended VA?</p>
+                                <a href="https://calendly.com/info-twindesk/30min" target="_blank" class="inline-block bg-td-pink text-white text-xl font-bold px-10 py-4 rounded-xl shadow-2xl hover:bg-td-primary transition duration-300 transform hover:scale-105">Schedule a FREE Call Now (30 Min)</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -230,10 +259,30 @@
         document.addEventListener('DOMContentLoaded', () => {
             lucide.createIcons();
 
+            // Set up a mapping for VA Types to their primary category name
+            const vaTypeMapping = {
+                'Admin': 'Administrative Assistant',
+                'Customer Service': 'Customer Service VA',
+                'Marketing': 'Marketing VA',
+                'Executive': 'Executive Assistant (EA)',
+                'E-commerce': 'E-commerce Specialist',
+            };
+            
+            // Set up a mapping for colors based on the suggested VA Type for the recommendation box
+            const vaColorMapping = {
+                'Administrative Assistant': 'text-td-primary',
+                'Customer Service VA': 'text-td-pink',
+                'Marketing VA': 'text-td-orange',
+                'Executive Assistant (EA)': 'text-td-secondary',
+                'E-commerce Specialist': 'text-td-pink', // Using td-pink again, or you can define a new color
+            };
+
             const checkboxes = document.querySelectorAll('.task-checkbox');
             const totalHoursEl = document.getElementById('total-hours');
             const vaCommitmentEl = document.getElementById('va-commitment');
             const vaTypeEl = document.getElementById('va-type');
+            
+            const colorClasses = Object.values(vaColorMapping).join(' ') + ' text-gray-400 text-td-primary text-td-secondary';
 
             function updateRecommendation() {
                 let totalHours = 0;
@@ -249,53 +298,48 @@
                     }
                 });
 
-                // --- Update Hours and Commitment ---
+                // --- 1. Update Hours and Commitment ---
                 totalHoursEl.textContent = totalHours;
 
                 let commitment = 'N/A';
+                vaCommitmentEl.classList.remove(colorClasses);
+
                 if (totalHours >= 30) {
                     commitment = 'Full-Time VA';
-                    vaCommitmentEl.classList.remove('text-td-secondary', 'text-gray-400');
                     vaCommitmentEl.classList.add('text-td-primary'); // Full-Time uses primary color
-                } else if (totalHours > 0) {
+                } else if (totalHours >= 10) {
                     commitment = 'Part-Time VA';
-                    vaCommitmentEl.classList.remove('text-td-primary', 'text-gray-400');
                     vaCommitmentEl.classList.add('text-td-secondary'); // Part-Time uses secondary color
                 } else {
                     commitment = 'N/A';
-                    vaCommitmentEl.classList.remove('text-td-primary', 'text-td-secondary');
                     vaCommitmentEl.classList.add('text-gray-400');
                 }
                 vaCommitmentEl.textContent = commitment;
 
-                // --- Determine VA Type ---
-                let topCategory = 'General Tasks';
+                // --- 2. Determine VA Type ---
+                let topCategoryKey = 'General Tasks';
                 let maxHours = 0;
                 
                 if (totalHours > 0) {
                     for (const category in categoryHours) {
                         if (categoryHours[category] > maxHours) {
                             maxHours = categoryHours[category];
-                            topCategory = category;
+                            topCategoryKey = category;
                         }
                     }
                 }
                 
-                vaTypeEl.textContent = topCategory;
+                // Map the internal category key to the display name
+                const vaTypeDisplayName = vaTypeMapping[topCategoryKey] || 'General Tasks';
+                vaTypeEl.textContent = vaTypeDisplayName;
 
                 // Simple color coding for VA Type
-                vaTypeEl.classList.remove('text-td-primary', 'text-td-pink', 'text-td-orange', 'text-gray-400');
-                if (topCategory === 'Administrative Support' || topCategory === 'Executive Assistant') {
-                    vaTypeEl.classList.add('text-td-primary');
-                } else if (topCategory === 'Customer Service') {
-                    vaTypeEl.classList.add('text-td-pink');
-                } else if (topCategory === 'Marketing') {
-                    vaTypeEl.classList.add('text-td-orange');
-                } else {
-                    vaTypeEl.classList.add('text-gray-400');
-                }
+                vaTypeEl.classList.remove(colorClasses);
+                const typeColor = vaColorMapping[vaTypeDisplayName] || 'text-gray-400';
+                vaTypeEl.classList.add(typeColor);
             }
 
+            // Attach event listeners
             checkboxes.forEach(checkbox => {
                 checkbox.addEventListener('change', updateRecommendation);
             });
@@ -303,38 +347,9 @@
             // Initial calculation on load
             updateRecommendation();
 
-            // Accordion Logic
-            const accordionHeaders = document.querySelectorAll('.accordion-header');
-            accordionHeaders.forEach(header => {
-                header.addEventListener('click', () => {
-                    const targetId = header.getAttribute('data-target');
-                    const targetContent = document.getElementById(targetId);
-                    const isExpanded = header.getAttribute('aria-expanded') === 'true';
+            // The original accordion logic is removed as the tasks are now on one page.
+            // If you decide to re-add accordions, please use the original logic for that part.
 
-                    if (isExpanded) {
-                        header.setAttribute('aria-expanded', 'false');
-                        targetContent.style.maxHeight = null;
-                    } else {
-                        // Collapse all other open accordions
-                        accordionHeaders.forEach(otherHeader => {
-                            const otherContent = document.getElementById(otherHeader.getAttribute('data-target'));
-                            if (otherHeader !== header && otherHeader.getAttribute('aria-expanded') === 'true') {
-                                otherHeader.setAttribute('aria-expanded', 'false');
-                                otherContent.style.maxHeight = null;
-                            }
-                        });
-
-                        // Expand the current one
-                        header.setAttribute('aria-expanded', 'true');
-                        targetContent.style.maxHeight = targetContent.scrollHeight + "px";
-                    }
-                });
-            });
-
-            // Set initial accordion heights
-            document.querySelectorAll('.accordion-content').forEach(content => {
-                content.style.maxHeight = content.scrollHeight + "px";
-            });
         });
     </script>
 </body>
